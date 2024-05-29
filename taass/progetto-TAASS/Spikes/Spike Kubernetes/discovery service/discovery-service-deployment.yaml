@@ -1,0 +1,31 @@
+apiVersion: apps/v1             # tells Kubernetes which version of the API to use when managing this resource.
+kind: StatefulSet               # Specifies the type of Kubernetes resource.
+metadata:
+  name: eureka-server           # Specifies the name of the StatefulSet. This name will be used to identify the StatefulSet in the cluster.
+spec:
+  serviceName: "eureka"         # ensures that each pod in the StatefulSet has a unique network identity.
+  replicas: 1                   # Defines how many pods should be running at any given time.
+  selector: 
+    matchLabels:
+      app: eureka-server        # Ensures that the StatefulSet manages pods with the specified labels.
+  
+  template:                     # Contains the specification for the pod, including metadata and the container spec.
+    metadata:
+      labels:
+        app: eureka-server      # Specifies the labels that will be applied to each pod in the StatefulSet.
+    spec:                       # Defines the container(s) that will run in each pod and other related settings.
+      
+      containers:
+      - name: discovery-service
+        image: discovery-service
+        ports:
+        - containerPort: 8761
+
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "256Mi"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+podManagementPolicy: "Parallel"

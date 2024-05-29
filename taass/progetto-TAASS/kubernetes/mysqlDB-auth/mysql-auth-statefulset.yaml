@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql-auth
+  #namespace: mymusicspace
+
+  labels:
+    app: mysql-auth
+
+spec:
+  serviceName: mysql-auth-svc
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-auth
+  
+  template:
+    metadata:
+      labels:
+        app: mysql-auth
+    spec:
+      containers:
+      - name: mysql-auth
+        imagePullPolicy: IfNotPresent
+        image: mysql:8.0
+        env:
+          - name: MYSQL_USER
+            value: admin
+          - name: MYSQL_PASSWORD
+            value: password
+          - name: MYSQL_DATABASE
+            value: AuthDB
+          - name: MYSQL_ROOT_PASSWORD
+            value: password
+      
+        ports:
+          - containerPort: 3306
+        volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: mysql-auth-data
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "256Mi"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+      volumes:
+        - name: mysql-auth-data
+          persistentVolumeClaim:
+            claimName: "mysql-auth-pvc"
