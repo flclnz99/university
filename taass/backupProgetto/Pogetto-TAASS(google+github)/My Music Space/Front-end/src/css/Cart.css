@@ -1,0 +1,13 @@
+.cartImg{
+    height: 100%;
+    width: 100%;
+    float:right;
+    position: relative;
+    cursor: pointer;
+}
+.cartDiv{
+    float:right;
+    margin-left: auto;
+    top:10vh;
+    z-index: -7;
+}

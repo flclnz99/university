@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: mymusicspace
+  name: shop-service
+spec:
+  ports:
+    - name: "8093"
+      port: 8093
+      targetPort: 8093
+  selector:
+    io.kompose.service: shop-service

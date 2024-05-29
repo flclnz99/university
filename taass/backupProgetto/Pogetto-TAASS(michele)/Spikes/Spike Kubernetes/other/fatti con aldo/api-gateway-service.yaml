@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: mymusicspace
+  name: api-gateway-service
+  labels:
+    app: api-gateway-service
+spec:
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: api-gateway-service
+  type: LoadBalancer

@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: #NOME DEPLOYMENT
+  labels:
+    app: #LABEL
+
+# specifiche del deployment
+spec:
+  replicas: 2 #Quante repliche
+  selector:
+    matchLabels:
+      app: #LABEL
+  
+  # Specifiche del POD
+  template:
+    metadata:
+      labels:
+        app: #LABEL
+    
+    # Blueprint del POD
+    spec:
+      containers:
+        - name: 
+          image: 
+          ports:
+
+
+# Connessione del deployment al POD
+In questo file abbiamo 2 metadata:
+  - metadata del componente Deployment
+  - metadata del componente POD
+Nei metadata mettiamo una label. Questa label ci permette di identificare il componente.
+Nelle specifiche del deployment abbiamo un selector.
+La Match label del selector dice al deployment a quale pod ci si riferisce nella costruzione
+dell stesso. 
+La label del matchlabel e quella del pod DEVONO COINCIDERE
+
+
+# Connessione del deployment al service
+La label nei metadata del deployment serve al Service.
+Nel selector del service abbiamo una label (non match label, perchè il file del service 
+è definito in un altro modo). Le due label DEVONO COINCIDERE ASSIEME ALLA LABEL DEL POD
+Per convenienza tutte le label (app:NOME) fra deployment, pod e service devono coincidere
+
+

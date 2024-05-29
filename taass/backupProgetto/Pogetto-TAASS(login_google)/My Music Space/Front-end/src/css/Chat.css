@@ -1,0 +1,40 @@
+.Chat img{
+    border-radius: 20%;
+    background: conic-gradient(from 180deg at 50% 50%, #00324F 0deg, #005282 120deg, #0082CF 240deg, #3E99CF 360deg);
+
+}
+
+.Chat{
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+.Chat img:hover{
+    box-shadow: 0 0 20px #0082CF;
+}
+
+.rotate-vert-center {
+    -webkit-animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes rotate-vert-center {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+@keyframes rotate-vert-center {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}

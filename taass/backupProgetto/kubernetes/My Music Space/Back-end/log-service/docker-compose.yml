@@ -1,0 +1,322 @@
+services:
+
+  #######################################
+  # RabbitMQ container
+  #######################################
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    restart: always
+    networks:
+      - mynetwork
+
+
+  #######################################
+  # MYSQL DBMS
+  #######################################
+
+  # mysqlDB:
+  #   image: mysql:8.0
+  #   container_name: mysqlDB
+  #   command: --default-authentication-plugin=mysql_native_password
+  #   ports:
+  #     - "3306:3306"
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: ricerca
+  #     MYSQL_DATABASE: Taass_Db
+  #     MYSQL_USER: aclm
+  #     MYSQL_PASSWORD: ricerca_Taass
+  #   volumes:
+  #     - persistent:/var/lib/mysql
+  #   restart: always
+  #   networks:
+  #     - mynetwork
+
+  mysqlAuthDB:
+    image: mysql:8.0
+    container_name: mysqlAuthDB
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: AuthDB
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysqldataauth:/var/lib/mysql
+    restart: always
+    networks:
+      - mynetwork
+
+
+
+  #######################################
+  # mongoDB
+  #######################################
+
+  # mongoShopDB:
+  #   image: mongo
+  #   container_name: mongoShopDB
+  #   restart: always
+  #   ports:
+  #     - "27018:27017"
+  #   volumes:
+  #     - mongodatashop:/data/db
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=rootuser
+  #     - MONGO_INITDB_ROOT_PASSWORD=rootpass
+  #   networks:
+  #     - mynetwork
+
+  mongoDB:
+    image: mongo
+    container_name: mongoDB
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodatachat:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=rootuser
+      - MONGO_INITDB_ROOT_PASSWORD=rootpass
+    networks:
+      - mynetwork
+
+  mongoLogDB:
+    image: mongo
+    container_name: mongoLogDB
+    restart: always
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongodatalog:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=rootuser
+      - MONGO_INITDB_ROOT_PASSWORD=rootpass
+    networks:
+      - mynetwork
+
+
+
+  #######################################
+  # API GATEWAY
+  #######################################
+
+
+  api-gateway-service:
+    container_name: api-gateway-service
+    build:
+      context: ../api-gateway-service
+      dockerfile: Dockerfile
+    image: api-gateway-service
+    ports:
+      - "8080:8080"
+    environment:
+      - EUREKA_SERVER=http://discovery-service:8761/eureka/
+    depends_on:
+      - rabbitmq
+      - discovery-service
+    restart: always
+    networks:
+      - mynetwork
+
+
+
+  #######################################
+  # discovery-service
+  #######################################
+
+  discovery-service:
+    container_name: discovery-service
+    build:
+      context: ../discovery-service
+      dockerfile: Dockerfile
+    image: discovery-service:latest
+    ports:
+      - "8761:8761"
+    restart: always
+    depends_on:
+      - rabbitmq
+    networks:
+      - mynetwork
+
+
+  #######################################
+  # log-service container
+  #######################################
+
+  log-service:
+    container_name: log-service
+    build:
+      dockerfile: Dockerfile
+    image: log-service:latest
+    ports:
+      - "8096:8096"
+    environment:
+      - EUREKA_SERVER=http://discovery-service:8761/eureka/
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=guest
+      - SPRING_RABBITMQ_PASSWORD=guest
+    networks:
+      - mynetwork
+    depends_on:
+      - rabbitmq
+      - discovery-service
+      - mongoLogDB
+    restart: always
+
+
+
+  #######################################
+  # chat-service container
+  #######################################
+
+  chat-service:
+    container_name: chat-service
+    build:
+      context: ../chat-service
+      dockerfile: Dockerfile
+    image: chat-service:latest
+    ports:
+      - "8091:8091"
+    environment:
+      - EUREKA_SERVER=http://discovery-service:8761/eureka/
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=guest
+      - SPRING_RABBITMQ_PASSWORD=guest
+    networks:
+      - mynetwork
+    depends_on:
+      - rabbitmq
+      - discovery-service
+      - mongoDB
+      - mongoLogDB
+      - mongo-log-express
+      - log-service
+    restart: always
+
+
+
+  #######################################
+  # auth-service container
+  #######################################
+
+  auth-service:
+    container_name: auth-service
+    build:
+      context: Back-end/auth-service
+      dockerfile: Dockerfile
+    image: auth-service:latest
+    ports:
+      - "8090:8090"
+    networks:
+      - mynetwork
+    environment:
+      - EUREKA_SERVER=http://discovery-service:8761/eureka/
+    restart: always
+    depends_on:
+      - rabbitmq
+      - discovery-service
+      - api-gateway-service
+      - mysqlAuthDB
+
+
+  # #######################################
+  # # music-service container
+  # #######################################
+
+  # music-service:
+  #   container_name: music-service
+  #   build:
+  #     context: Back-end/music-service
+  #     dockerfile: Dockerfile
+  #   image: music-service
+  #   ports:
+  #     - "8092:8092"
+  #   environment:
+  #     - EUREKA_SERVER=http://discovery-service:8761/eureka/
+  #   depends_on:
+  #     - discovery-service
+  #     - api-gateway-service
+  #     - mysqlDB
+  #   restart: always
+  #   networks:
+  #     - mynetwork
+
+
+
+  # #######################################
+  # # shop-service container
+  # #######################################
+
+  # shop-service:
+  #   container_name: shop-service
+  #   build:
+  #     context: Back-end/shop-service
+  #     dockerfile: Dockerfile
+  #   image: shop-service:latest
+  #   ports:
+  #     - "8093:8093"
+  #   environment:
+  #     - EUREKA_SERVER=http://discovery-service:8761/eureka/
+  #   networks:
+  #     - mynetwork
+  #   depends_on:
+  #     - rabbitmq
+  #     - discovery-service
+  #     - mongoShopDB
+  #   restart: always
+
+
+
+  mongo-log-express:
+    image: mongo-express
+    container_name: mongo-log-express
+    restart: always
+    ports:
+      - "8082:8081"
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
+      - ME_CONFIG_MONGODB_SERVER=mongoLogDB
+    depends_on:
+      - mongoLogDB
+    networks:
+      - mynetwork
+
+
+
+  #######################################
+  # front-end-service container
+  #######################################
+
+  # front-end-container:
+  #   container_name: front-end-container
+  #   build:
+  #     context: ./Front-end
+  #     dockerfile: Dockerfile
+  #   image: front-end-container:latest
+  #   networks:
+  #     - mynetwork
+  #   ports:
+  #     - "5173:5173"
+  #   restart: always
+
+volumes:
+  mongodatalog:
+  mongodata:
+  mongodatachat:
+  mongodatashop:
+  persistent:
+  mysqldataauth:
+
+networks:
+  mynetwork:
+    driver: bridge

@@ -1,0 +1,12 @@
+MINIKUBE
+
+Alla prima esecuzion, kubernetees esegue lentamente. Deve scaricare tutti i componenti che servono per inizializzare il cluster con l'unico nodo.
+Per lanciare minikube in un container docker:  		- minikube start --driver docker
+
+Per conoscere lo stato del cluster usiamo:			- minikube status
+
+Una volta lanciato e reso operativo, possiamo interagire col cluster usando kubeCTL command line tool. 
+Questi, viene installato come dipendenza di minikube all'atto dell'installazione.
+Per kubectl get node:
+
+	

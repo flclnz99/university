@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-service
+  
+  template:
+    metadata:
+      labels:
+        app: auth-service
+    spec:
+      containers:
+        - name: auth-service
+          image: aamshaegar/auth-service:1.0.0
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 8090
+          env:
+            - name: EUREKA_SERVER
+              value: http://discovery-service-0.discovery-service-svc:8761/eureka/
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:mysql://mysql-auth-svc:3306/AuthDB?createDatabaseIfNotExist=true"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "admin"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "password"
+
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "500Mi"
+            limits:
+              memory: "800Mi"
+              cpu: "1000m"

@@ -1,0 +1,121 @@
+
+#ShopViewContainer{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.ShopView {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: display 0s,opacity .5s linear;
+    overflow-y:auto;
+}
+
+.ShopView p {
+    float: left;
+    top: 0;
+    left: 25%;
+    position: relative;
+    color: #fff;
+    font-weight: 700
+}
+
+.MerchProduct img:hover {
+    transform: scale(1.1)
+}
+
+
+.TicketRow{
+    height: 75%;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-color: white;
+    border-radius: 2vh;
+    width: 93%;
+    background-color: #404040;
+    top: 10%;
+    margin-top: 3%;
+}
+
+
+.TicketProduct{
+    flex: 0 0 auto;
+    width: auto;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    top: 2%;
+    margin-left: 1.1%;
+    height: 95%;
+    width: 20%;
+}
+
+.TicketProduct img{
+    transition: 0.2s;
+}
+
+.TicketProduct img:hover{
+    transform: scale(1.06);
+}
+
+
+.MerchProduct{
+    margin-left: 5%;
+    top: 5%;
+    position: relative;
+    height: 100%;
+    width: 25%;
+    float: left;
+    cursor: pointer;
+}
+.MerchProduct img{
+    margin-left:5%;
+    float: left;
+    position: relative;
+    border-radius: 3vh;
+}
+
+.MerchProduct img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 3%;
+    transition: transform .3s ease-in-out
+}
+
+.ShopView {
+    top: 5%;
+    margin-top: 7%;
+    height: 85vh;
+    opacity: 0
+}
+
+
+.TicketImg{
+    display: inline-block;
+    border-radius: 5vh;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.labelRow{
+    margin-left: 1.5%;
+    padding-top: 0.5%;
+    color: white;
+    font-family: myFirstFont;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.scrollBar{
+    display: flex;
+    overflow-x: auto;
+    height: 93%;
+}
+
+#inEvidenza{
+    margin-left: 4.5%;
+}
