@@ -1,0 +1,80 @@
+\chapter{Cognitive Assessment}
+i modelli spiegati fino ad oggi sono utilizzati per spiegare come gli umani processano le immagini
+o come ?? affrontiamo 3 arogmenti legati a ciò, quelli nella \textbf{slide1}. Il primo aspetto riguarda 
+vedere i modeli come modelli "congnitivi", che è poi l'idea originale da cui provengono. Oggi non è più
+considerato così, la ricerca è andata nella direzione delle applicazioni. Nella seconda parte ci chiediamo
+come valutare in maniera cognitiva. Infine proveremo i modelli per predirre quale area del cervello si attiva
+in un determinato contesto
+
+\textbf{slide3:} la prima artificial nn fu proposta da ricercatori "nomi" era molto utile per spiegare
+come i bambini imparano il linguaggio e molti aspetti legati ad esso. e anche spiegare come il past tense
+può essere ipmarato dall'esperienza. Anche il lato visivo ha questo proposito, una delle aspirazioni per la
+creazione di queste reti fosse la riproposizione del processamento delle immagini da parte del cervello umano.
+
+\textbf{slide5:} oggi la amggiore parte delle persone sono interessate alle reti non per quello detto prima
+ma perchè performano bene. A partire da questa conoscienza possiamo usare alcuni strumenti di altre
+disicpline per studiare più approfonditamente le reti e metterle a cofronto con il cervello umano (in
+questo contesto si inseriscono i paper).
+
+\textbf{slide6, paper1:} l'oggeto era: lato cognitivo innanzitutto capire fino a che punto gli 
+lstm capiscono le long term dependencies. Lato cognitivo, vedere se questi modeli sono buoni
+per l'apprendimento del linguaggio. molti metodi statistici per il trattamento delle frasi.. 
+La domanda è, le reti possono capire queste dipendenze? Come lstm capisce queste relazioni?
+
+\textbf{slide11:} consideriamo lstm testato in subject-verb agreement. trainano lstm in 3 condizioni 
+diverse e vedere come trattano la frase.
+
+\textbf{slide12:} questo sono i risultati, l'errore aumento all'aumentare della distanza tra il
+verbo e il soggetto, inteso come numero di verbi che si frappongono. 
+
+\textbf{slide13:} l'errore aumenta all'aumentare del numero di attrattori. 
+
+\textbf{slide18:} lstm fanno errori sulle frasi difficili. l'overall perfomance è comunque buona perchè
+la maggior parte delle frasi su wikipedia sono semplici. sulle singole frasi l'errore cresce. ci sono
+differenze tra le perfomance delle lstm e il cervello umano, c'è bisogno di supervisione per avere
+buone prestazioni.
+
+\textbf{slide19:} provano ad analizzare il comportamento delle hidden units delle cell cercando di capire
+da fuori che tipo di conoscenza le unità imparano, alcuni di questi risultati sono riportati nella slide.
+
+\textbf{slide22:} la conclusione è interessante, provarono alcune soluzioni. le due nella slide. la prima
+usa l'oversampling per aumentare le performance. poi provano con la supervisione.
+Tutto ciò è vero per lsmt. Alcuni modelli si comportano meglio in task sintattici come i transformer ma
+hanno altri problemi.
+
+\textbf{slide23:} c'è tutta una letteratura che compara cervello e architetture. reti basate su transformer
+performano meglio su task sintatttici semplicic ma per i motivi sbagliati. hanno trovato altri esempi
+
+\textbf{slide24:} l'ultimo risultati è il più interessante. in questo paper testano gli llm come chatgpt4.
+affermano che questi modelli sono trainati su large corpora per poducrre la prossima parola. e sono sensibili
+alla probabilità dell'output che devono profurre. per esempio usano gpt4 per contare le lettere. inizialmente
+gpt fa bene, poi sbaglia perchè 30 è una risposta molto più comune di 29. il secondo esempio è dello stesso
+tipo. 
+
+\textbf{slide25:} qunidi summarizziamo i risultati
+
+\textbf{slide27:} il punto più importante, per le differenze tra lm e umani c'è questa slide. in qualche
+modo abbiamo una predisposizione al linguaggio. 
+
+\textbf{slide29:} in questo paper si cerca di usare computational model per capire human model. qui 
+cerca di rispondera eìalle domanda se cnn e altre modelli dellastessa famiglia usano le stesse feture nostre
+
+\textbf{slide36:} prima di tutto considerano un range di cnn, il principale tool è mirc, piccole porzioni
+di immagini da cui si capisce l'oggetto dell'immagine principale. sono minime perchè se tagliaye di più non
+saremmo in grado di riconoscere l'immagine principale. 
+
+\textbf{slide38:} mostrate la percepuntale di persone che continuano a riconoscere lìiommagine.
+
+\textbf{slide42:} mirc=a e submirc=a*. siccome le immagini somno piccole, rilevano le feture che sono
+necessarie a noi per capire che tipo di oggetto ci sia nell'immagin.e testano human e cnn su queste immagini
+per vedere se usiamo le stesse fearture o ono. 
+
+\textbf{slide43:} risultati in questa slide, concludono che umani e nn non usano festure simili per 
+classificare immagini
+
+\textbf{slide44:} formualno la teroia che il nostro modo di classificare è top down e bottom up
+
+\textbf{slide46:} non vuole tutti i dettagli dei paper, vuole sapere che tipo di problemi affrtontano
+
+\textbf{slide47:} molti ricercatori oggi provano a spiegare come nn predicono e capiscono, 
+è il caso dell'ultimo paper

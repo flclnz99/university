@@ -1,0 +1,231 @@
+\chapter{GAN}
+
+\textbf{slide 5:} perchè studiamo modelli generativi? cerchiamo di apprendere una distr molto più difficile 
+di quella di un modelo discriminativo, ha senso farlo? alcuni dei motivi per cui si, sono questi (slide).
+
+\textbf{slide 7:} esempi di task. questi sono esempi che oggi sono un po meno interessanti perchè vecchi di 
+4 anni. 
+
+\textbf{slide 8:} questo è più interessante.
+
+\textbf{slide 9:} oggi i tranformer sono usati sia per immagini che per testo
+
+\textbf{slide 10:} ma quando arrivarono le gan rivoluzionarono la ricerva sul modello generativo quindi 
+cerchuamo ora di capire quali fossero gli approcci generativi precedenti alle gan e facciamo un confronto
+con le gan. parleremo solo di modelli generativi che utilizzano la maximum likelihood. cerchiamo un modello
+che massimizza la probabilità dell'insieme dei dati che stiamo osservando.
+
+\textbf{slide 11:} possiamo riscriverlo con i logaritmi. dato che assumiamo gli esempi indipendenti e 
+identicamente distribuiti..
+
+\textbf{slide 12:} 
+
+\textbf{slide 13:} tassonomia dei modeli generativi, al vertice abbiamo quelli con la maximum likelihood.
+vogliamo gestire la probabilità dei dati, si può fare in modo esplicito o implicito. tra gli espliciti ci sono
+casi in cui la densità è trattabile (la probabilità è modellabile abbastanza precisamente) e casi in cui si
+deve approssimare (variational autoencoder, markov chain). poi ci sono modeli che modellano la densità in modo
+implicito (markov chain).
+
+\textbf{slide 14:} partiamo daai modelli che moedllano in modo epslicito la densità e tra questi vediamo 
+quelli che cercano di modellare completamente la densità.
+
+\textbf{slide 15:} tanti di questi modelli in genere (assumiamo che la densità sia complicata, non facciamo
+assunzioni sulla indipendenza delle feature), scrivono la distribuzione nella forma che c'è nella slide.
+
+\textbf{slide 16:}
+
+\textbf{slide 17:} perchè abbiamo bisogno dello jacobiano? qual è il suo ruolo? il punto è che quando calcolo
+la probabilità di z, non posso parlare solo di p(z), devo considerare un intervallo infinitesimale che contiene
+z. quando z viene mappata su un'altra superficie utilizznao la funzione g, non solo viene distorto z ma viene
+distorto anche l'intervallino. il punto è che affinchè tutto resti in piedi voglio che la |p(x)dx|=|p(z)dz|.
+
+\textbf{slide 18:} 
+
+\textbf{slide 19:} il determinante dice come i volumi vengono modificati dalla moltiplicazione con una 
+matrice. tutto ciò ci serve a capire da dove arrivi la formula della slide 16. 
+
+\textbf{slide 20:} a questo punto vediamo i difetti di questo oggetti. innanzitutto risco a modellare p(x) solo
+quando p(z) è trattabile e anche lo jacobiano di g^-1 (g deve essere continua, differenziabile e invertibile,
+il che non è banale).
+
+\textbf{slide 21:} 
+
+\textbf{slide 22:} ora vediamo i modelli che tentano di approssimare
+
+\textbf{slide 23:} uno è il modello variazionale (variational autoencoder), l'idea è che abbiamo bisogno di 
+modellare log p model di x e stiamo cercando di massimizzare la log likelihood variando theta, la distribuzione
+è troppo complicata da modellare quindi calcoliamo un lower bound per il log della distribuzione e cerchiamo
+un modello theta che massimizzi il lower bound. nel caso migliore un lower bound ottenuto coinciderà con la 
+distribuzione, nei casi più difficili approssimiamo la distribuzione. i variational autoencoder lavorano solo
+con distribuzioni gaussiane.
+
+\textbf{slide 24:} i vantaggi sono che spesso la distribuzione approssimata è troppo cruda e non approssima
+bene quella vera. confrontati con altri approcci sono più difficili da addestrare, anche se anche le gans 
+lo sono.
+
+\textbf{slide 25:} un'altra approssimazione si fa con le catene di markov. utilizziamo una distribuzione più
+semplice. 
+
+\textbf{slide 26:} 
+
+\textbf{slide 31:} capiamo l'intuizione che c'è dietro. l'idea è che abbiamo un gioco avversario tra 2 agenti.
+il generatore g e il discriminatore d. l'idea è che g fa sampling da una distribuzione semplice e in funzione
+del punto campionato genererà un'immagine. pesca a caso un'immagine, la propone a d insieme ad alcune immagini
+vere. tutto parte a caso, g genera inizalmente rumore bianco, o bianche o nere. d ha alcune immagini vere e 
+alcune generate, deve distinguerle. viene addestrato a questo. gli oggetti sono in un'unica rete e posso fare
+discesa del gradiente su tutto insieme, addestrando contemporaneamente il discriminatore a distinguere 
+le immagini generate e quelle vere e il g a generare immagini migliori sulla base degli errori di d. 
+
+\textbf{slide 32:} definiamo g e d come due funzioni differenziabili (due reti neurali), g prende uno z
+(sampling da una qualche distribuzione), l'output ti g è un'immagine generata xtilde che appartiene allo stesso
+spazio di rappresentazione delle immagini vere. d prende un'immagine x che potrebbe essere vera o generata,
+è definito in funzione di un set di parametri theta di d e emette una predizione in output riguardo x che sia
+fake o real. assumiamo che d tenti di predire le possibilità che l'immagine data in input sia reale, sarà un
+numero vicino ad 1 se crede che l'immagine sia reale, 0 altrimenti. le funzioni costo di g e d le chiamiamo 
+lg e ld ed entrambe prendono i parametri di g e d. la penalizzazione dipendone per entrambe dal risultato 
+di qualcos'altro. 
+
+\textbf{slide 33:} g e d tentano di minimizzare la funzione di costo, potendo aggiornare solo i parametri
+che gli competono. questo tipo di ottimizzazione "avversaria" può essere modellato come un gioco a somma 0
+ed effettivamente con particolari funzioni di loss il parallelo è concreto e la soluzione ottima è il punto 
+di equilibrio di Nash. oggi in realtà si usano versioni che non rispettano i requisiti teorici dei giochi a somma
+0 ma sono più facili da addestrare. 
+
+\textbf{slide 34:} come si fa training? abbiamo due mini batch di esempi, immagini generate e immagini vere.
+valutiamo la loss, calcoliamo il gradiente della loss di g e aggiorniamo theta d in funzione del gradiente 
+rispetto a theta d. per il generatore calcoliamo il gradiente di g e aggiorniamo i parametri in funzione di
+questo. sono oggetti difficili da addestrare, ma una cosa importante nell'addestramente è dare un po di 
+vantaggio a d, facendo un po di iterazioni in più prima di andare indietro al g.
+
+\textbf{slide 35:} capiamo come sono fatte le cost. la funzione costo di d è quella della slide. sembra strana
+ma in realtà è la cross entropy calcata in un modo un po particolare. 
+
+\textbf{slide 36:} ricordiamo la cross-entropy. il punto è che aveva questa forma (slide). 
+
+\textbf{slide 37:} nel caso binario abbiamo che la x è solo 0 o 1, quindi h(p,q) (vedi slide). p e q sono le
+due distribuzioni, i valori sono 0 e 1 e ottengono quella espressione. nel caso di classificazione binaria p
+è in genere l'etichetta che ci viene data (1 o 0), q è l'etichetta (numero tra 0 e 1, la probabilità). così
+se chiamiamo y l'etichetta vera e y^ l'etichetta predetta ottengono la cross-entrpy (p,q) è (slide).
+
+\textbf{slide 38:} rispetto a prima abbiamo solo la media su tutti gli esempi, il resto è uguale. assumiamo che
+y=1, cioè l'etichetta è vera ma nel nostro caso vuol dire che l'immagine che stiamo guardando è vera non
+generata. se l'immagine è vera mi interessa solo la prima parte (fino a -(1-y)).
+
+\textbf{slide 39:} una volta introdotta la loss del d, come descriviamo quella del g? la prima proposta, 
+quella più semplice è l'inverso della loss del d. l'idea è che g è penalizzato quando d fa bene e 
+viceveresa. questa è quella che da luogo al gioco a somma zero di cui abbiamo parlato. ogni volta che d 
+perde qualcosa g guadagna e viceversa
+
+\textbf{slide 40:} creando una nuova loss locale che chiamiamo V, possiamo riscrivere l'intero problema di 
+minimizzazione in questo modo cerchiamo i parametri theta g e d che minimiczzano theta g e massimizzano 
+theta d. 
+
+\textbf{slide 41:} il che vuol dire che stiamo navignaod una superficie di loss comnune con 2 prospettive
+diverse. da un lato la guardiamo rispetto ai parametri di d e dall'altra di g. cerchiamo in un caso di 
+minimizzare e in uno di massiminizzare. di g (player1) di d (player2) nella realtà cerchiamo un punto 
+di sella di questa funzione multivariata
+
+\textbf{slide 42:} dal punto di vista teorico questo set up è interessante perchè si dimostra che corrisponde 
+a minimzzare jsd tra la distrivbuzione dei dati e quella del modello (come con la kullback leibner 
+all'inizio). la jsd è una modifica della kullback che ha il vantaggio di essere simmestrica, la kl no. 
+è una divergenza simmetrica, si vede invertendo q e p ed è semplicemente la distribuzione mediana di p e q. 
+si può anche dimostraer che questo gioco converge ad un equilibrio tra i 2 player se il gioco si può 
+ottimizzare nello spazio di funzione, succede raramente in pratica.
+
+\textbf{slide 43:} se il d sta facendo molto bene, il g non sta imparando niente di utile e questo è molto 
+male. 
+
+\textbf{slide 44:}
+
+\textbf{slide 45:} la vecchia loss non andava bene perchè quando d a molto bene le loss sono piatte e quindi 
+g non impara nulla. per risovere questo, usiamo questa nuova loss, che non ha quei vantaggi teorici ma è 
+più semplice. se la guardi è molto semplice che semplicemente dice che siamo molto interessati nel generare 
+qualcosa. quando è vero voglio massimizzare il d output. semplicemente massimizziamo lo score che il d da per 
+le immagini che genero, ovvero ingannare il discriminatore.
+
+\textbf{slide 46:} la blu e la linea verde ci interessano. sulle x abbiamo l'output del d per le immagini 
+generate. si vede che mentre la loss del minimax è inizialmente flat, con la seconda loss invece decresce.
+
+\textbf{slide 47:} quindi è un gioco euristico (il primo approccio era teorico), le loss sono cambiate come
+nella slide, non siamo più in un gioco a somma zero.
+
+\textbf{slide 48:} ci chiediamo perchè le gan lavorano così bene. per lungo tempo si pensava che le buone 
+performance fossero attribuita alla minimzzazione della jsd. in realtà è dimostrato che di solito minimzzare 
+la jsd è abbastanza simile 
+
+\textbf{slide 49:} 
+
+\textbf{slide 50:} slide già fatte
+
+\textbf{slide 51:}
+
+\textbf{slide 52:} in realtà la jsd non spiega perchè funzionino così bene le gan e le motivazioni sono le 
+due nelle slide. 
+
+\textbf{slide 53:} non ci interessa tanto sapere perchè succede perchè nessuno capisce davvero perchè 
+funzionano correttamente. 
+
+\textbf{slide 54:} fino alla slide 58 va bene tradurre le slide
+
+\textbf{slide 55:} 
+
+\textbf{slide 56:} 
+
+\textbf{slide 57:}
+
+\textbf{slide 58:} perchè abbiamo bisogno di un nuovo tipo di slide? 
+
+\textbf{slide 59:} per capire la wl prima capiamo la w distance. è una distance tra du prob ditr p e q 
+che definita in questo modo: inf(=min) su tutti le joint distr gan che sono le distribuxioni marginali p e 
+q e voglio prendere il minimo preso quando pesco tutte le distribuzioni gamma che hanno come distribuzione 
+marginale p(x) e q(y). consideriamo le distribuzioni x e y tali che abbiano p(x) e q(y) come probabilità 
+marginali. facciamo un esempio. x={0,1,2} y={a,b}. p(0)=0.3, p(1)=0.6, p(2)=0.1, q(a)=0.7, q(b)=0.3 
+consideriamo gamma su x e y, cioè abbiamo una tavola con tuttile possibili coppie di valori di x e y e 
+le loro probabilità. è probabile che la marginale di gamma rispetto a x e rispetto y non corrisponda a p e q.
+possiamo cecare di correggere gamma così da ottenere il risultato che vogliamo. lo facciamo finchè marginalizza
+correttamente su p e anche su q. una volta corretta gamma prendiamo il valore atteso e la distnza tra x e y.
+ora cerchiamo di capire perchè funziona. 
+
+\textbf{slide 60:} vediamo perchè è scritta così. l'idea di questa distanza è che possiamo pensare a p e q 
+come 2 collinette e vogliamo muovere una delle due in modo tale da ottenere la seconda, con il minor 
+lavoro possibile. è essenzialmente una misura di distanza tra le due distribuzioni. 
+dalla formula di prima, riscriviamo la E come l'integrale dopo l'uguale. interpretiamo x e y come la quantità
+che stiamo muovendo. gamma ora è una policy per muovere massa da x a y, non la stiamo pensando come una prob
+distr. 
+
+\textbf{slide 61:} vogliamo ora usarla per trainare gan, minimizzando la kl(pdata,pmodel), come all'inizio,
+ora però usiamo la nostra distanza e non la kl. 
+
+\textbf{slide 62:} in generale l'infimum è intrattabile. stiamo dicendo che se la rete, il d della rete, è
+lipschitz continous allora l'espressione della minmizzazione della wd può essere molto semplificata nella 
+differenza che si vede. a sinistra abbiamo l'expected value quando gliu esempi sono veri (pdata) del d output
+su x meno l'e quando le immaigni sono fake del d output. c'è anche la g loss. quindi queste sono facili da
+calcolare per la rete.
+
+\textbf{slide 63:} lipschitz continous essenzilmente vuol dire che una funzione non varia troppo in un 
+piccolo intervallo del dominio. "c" è la lipschitz constant. essenzialmente ci intressa che la funzione non
+cresca troppo velocemente.
+
+\textbf{slide 64:} la differenza è facile da implementare, ma per farlo ci interessa che la rete sia 
+lipschitz continous per qualche costante c. per farlo, ogni volta che aggioriamo i pesi li tronchiamo in modo
+che stiano nel range [-c,c]. un'altra differenza con le gan originali sta nella funzione di attivazione
+dell'ultimo layer del discriminatore che è lineare e non una sigmoide.  
+
+\textbf{slide 65:} monitorando la loss del g mentre converge, se vediamo le immagini generate, convergono con
+la loss (sono migliori), precedentemente non era vero. per migliorsree la convergenza in genere si danno
+più cicli computazionali al d che al g, prima si addestra bene il d e poi si addestra normalmente il g.
+
+\textbf{slide 66:} vediamo qualche esempio. questa è usando la js, non usando la wl. cominciamo con brutte 
+immagini, quasi random noise, miogliora sempre di più.
+
+\textbf{slide 67:}se guard la stesse immaigni ma usando le dcgan man mano che la loss scende le immagini
+migliorano.
+
+\textbf{slide 68:} il punto è che in punti in cui la loss è la stessa, da una parte c'è random noise 
+dall'altra no, quindi non c'è correlazione.
+
+\textbf{slide 69:}
+
+\textbf{slide 70:} il punto è che sono tutti esempi in cui la wl è correlata alla convergenza di g. 
+
+\textbf{slide 71:}

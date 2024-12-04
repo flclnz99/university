@@ -1,0 +1,69 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduzione}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Machine learning}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Task}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}No free launch theorem}{1}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Training di una rete neurale}{1}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}(Matrici e vettori) Calcolo}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Derivate}{3}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Integrali}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Derivate parziali e Gradienti}{5}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Derivate direzionali}{6}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Matrice Jacobiana}{8}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Derivate seconde}{8}{subsection.1.2.6}%
+\contentsline {paragraph}{Proprietà della matrice Hessiana.}{9}{section*.8}%
+\contentsline {section}{\numberline {1.3}Probabilità}{10}{section.1.3}%
+\contentsline {paragraph}{Distribuzione di probabilità (Caso discreto)}{10}{section*.9}%
+\contentsline {paragraph}{Distribuzione di probabilità (Caso continuo)}{11}{section*.11}%
+\contentsline {subsection}{\numberline {1.3.1}Probabilità marginale}{11}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Probabilità condizionta}{12}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Chain rule della probabilità condizionata}{12}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Indipendenza}{12}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Expectation (Valore atteso)}{13}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}Varianza e Deviazione standard}{13}{subsection.1.3.6}%
+\contentsline {paragraph}{Varianza}{13}{section*.15}%
+\contentsline {paragraph}{Deviazione Standard.}{13}{section*.16}%
+\contentsline {paragraph}{Covarianza.}{13}{section*.17}%
+\contentsline {paragraph}{Correlazione.}{14}{section*.19}%
+\contentsline {paragraph}{Covarianza vs Dipendenza.}{14}{section*.20}%
+\contentsline {subsection}{\numberline {1.3.7}Distribuzioni di Probabilità Comuni}{15}{subsection.1.3.7}%
+\contentsline {paragraph}{Bernoulli distribution.}{15}{section*.22}%
+\contentsline {paragraph}{Multinoulli distribution.}{15}{section*.23}%
+\contentsline {paragraph}{Binomial distribution.}{15}{section*.24}%
+\contentsline {paragraph}{Gaussian distribution.}{16}{section*.26}%
+\contentsline {paragraph}{Teorema del limite centrale.}{16}{section*.28}%
+\contentsline {paragraph}{Exponential e Laplace distributions.}{18}{section*.29}%
+\contentsline {paragraph}{Distribuzioni di tipo Mixture.}{19}{section*.32}%
+\contentsline {paragraph}{Regola di Bayes.}{19}{section*.34}%
+\contentsline {paragraph}{Variabili latenti.}{19}{section*.35}%
+\contentsline {subsection}{\numberline {1.3.8}Proprietà utili delle funzioni comuni}{20}{subsection.1.3.8}%
+\contentsline {paragraph}{Sigmoid.}{20}{section*.37}%
+\contentsline {paragraph}{Softplus.}{20}{section*.39}%
+\contentsline {paragraph}{Proprietà utili delle funzioni comuni.}{20}{section*.41}%
+\contentsline {subsection}{\numberline {1.3.9}Measure Theory}{22}{subsection.1.3.9}%
+\contentsline {paragraph}{Dettagli tecnici delle variabili continue.}{22}{section*.42}%
+\contentsline {section}{\numberline {1.4}Information theory}{24}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Quantificare l'informazione}{24}{subsection.1.4.1}%
+\contentsline {paragraph}{Misura dell'entropia di Shannon.}{25}{section*.45}%
+\contentsline {paragraph}{La divergenza Kullback-Leibler(KL).}{25}{section*.47}%
+\contentsline {paragraph}{Proprietà della KL divergence.}{26}{section*.48}%
+\contentsline {paragraph}{Minimizzare la KL divergence.}{26}{section*.49}%
+\contentsline {paragraph}{Cross Entropy.}{28}{section*.53}%
+\contentsline {subsection}{\numberline {1.4.2}Modelli grafici (modelli probabilistici strutturati)}{29}{subsection.1.4.2}%
+\contentsline {paragraph}{Modelli grafici.}{29}{section*.54}%
+\contentsline {paragraph}{Modelli diretti.}{29}{section*.55}%
+\contentsline {paragraph}{Modelli indiretti.}{30}{section*.57}%
+\contentsline {chapter}{\numberline {2}Autoencoders}{31}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Definizione}{32}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Undercomplete Autoencoders}{33}{section.2.2}%
+\contentsline {paragraph}{Definizione.}{33}{section*.62}%
+\contentsline {subsection}{\numberline {2.2.1}Autoencoders e PCA}{34}{subsection.2.2.1}%
+\contentsline {paragraph}{Sommario della PCA.}{34}{section*.64}%
+\contentsline {subsection}{\numberline {2.2.2}Manyfold}{35}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Regularized Autoencoders}{36}{section.2.3}%
+\contentsline {paragraph}{Proprietà fruttate per la regolarizzazione.}{36}{section*.66}%
+\contentsline {subsection}{\numberline {2.3.1}Sparse Autoencoders}{36}{subsection.2.3.1}%
+\contentsline {paragraph}{Definizione.}{36}{section*.67}%
+\contentsline {subsection}{\numberline {2.3.2}Generative Models (GM)}{37}{subsection.2.3.2}%
+\contentsline {paragraph}{Designing output units}{38}{section*.69}%
