@@ -1,0 +1,31 @@
+{
+  "received":[
+    
+{
+  "datetime":"2022.02.13-11:25:44",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "otheruser@gmail.com"
+  ],
+  "subject":"keep on coding",
+  "id":"niceproject@gmail.com%20220213112544",
+  "text":":)"
+},{
+  "datetime":"2022.02.13-11:26:00",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "otheruser@gmail.com"
+  ],
+  "subject":"keep on coding",
+  "id":"niceproject@gmail.com%20220213112600",
+  "text":":)"
+},{
+  "datetime":"2022.02.13-14:40:08",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "otheruser@gmail.com"
+  ],
+  "subject":"ccc",
+  "id":"niceproject@gmail.com%20220213144008",
+  "text":"aaaa"
+}]}

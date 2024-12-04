@@ -1,0 +1,190 @@
+{
+  "received":[
+    {
+      "datetime":"2022.06.15-19:04:15",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "secondclient@gmail.com"
+      ],
+      "subject":"Welcome!",
+      "id":"thirdclient@gmail.com%20220615190415",
+      "text":"Nice to see you here."
+    },
+    {
+      "datetime":"2022.06.15-19:04:36",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "secondclient@gmail.com"
+      ],
+      "subject":"Welcome!",
+      "id":"thirdclient@gmail.com%20220615190436",
+      "text":"When did you create an account on this service?"
+    },
+    {
+      "datetime":"2022.06.15-19:27:51",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "secondclient@gmail.com"
+      ],
+      "subject":"Still nothing?",
+      "id":"thirdclient@gmail.com%20220615192751",
+      "text":"Prova prova..."
+    },
+    {
+      "datetime":"2022.06.15-19:33:11",
+      "sender":"firstclient@gmail.com",
+      "receivers":[
+        "secondclient@gmail.com"
+      ],
+      "subject":"Still no server available",
+      "id":"firstclient@gmail.com%20220615193311",
+      "text":"still unable to send emails"
+    },
+    {
+      "datetime":"2022.06.15-19:37:36",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "firstclient@gmail.com",
+        "secondclient@gmail.com"
+      ],
+      "subject":"hello friends!",
+      "id":"thirdclient@gmail.com%20220615193736",
+      "text":"We're the first three clients!"
+    },
+    {
+      "datetime":"2022.06.16-10:23:22",
+      "sender":"firstclient@gmail.com",
+      "receivers":[
+        "secondclient@gmail.com",
+        "thirdclient@gmail.com"
+      ],
+      "subject":"test replyAll",
+      "id":"firstclient@gmail.com%20220616102322",
+      "text":"testing..."
+    },
+    {
+      "datetime":"2022.06.16-10:24:07",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "firstclient@gmail.com",
+        "secondclient@gmail.com",
+        "secondclient@gmail.com"
+      ],
+      "subject":"replying",
+      "id":"thirdclient@gmail.com%20220616102407",
+      "text":"no whitespaces"
+    },
+    {
+      "datetime":"2022.06.16-10:24:07",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "firstclient@gmail.com",
+        "secondclient@gmail.com",
+        "secondclient@gmail.com"
+      ],
+      "subject":"replying",
+      "id":"thirdclient@gmail.com%20220616102407",
+      "text":"no whitespaces"
+    },
+    {
+      "datetime":"2022.06.16-15:50:02",
+      "sender":"firstclient@gmail.com",
+      "receivers":[
+        "secondclient@gmail.com"
+      ],
+      "subject":"",
+      "id":"firstclient@gmail.com%20220616155002",
+      "text":""
+    },
+    {
+      "datetime":"2022.06.17-10:30:20",
+      "sender":"firstclient@gmail.com",
+      "receivers":[
+        "secondclient@gmail.com",
+        "thirdclient@gmail.com"
+      ],
+      "subject":"Checking something",
+      "id":"firstclient@gmail.com%20220617103020",
+      "text":""
+    },
+    {
+      "datetime":"2022.06.17-10:30:38",
+      "sender":"secondclient@gmail.com",
+      "receivers":[
+        "firstclient@gmail.com",
+        "secondclient@gmail.com",
+        "thirdclient@gmail.com"
+      ],
+      "subject":"check back",
+      "id":"secondclient@gmail.com%20220617103038",
+      "text":""
+    },
+    {
+      "datetime":"2022.06.17-10:35:54",
+      "sender":"firstclient@gmail.com",
+      "receivers":[
+        "firstclient@gmail.com",
+        "secondclient@gmail.com",
+        "thirdclient@gmail.com"
+      ],
+      "subject":"emailing everyone",
+      "id":"firstclient@gmail.com%20220617103554",
+      "text":"testing"
+    },
+    {
+      "datetime":"2022.06.17-10:40:00",
+      "sender":"firstclient@gmail.com",
+      "receivers":[
+        "secondclient@gmail.com",
+        "thirdclient@gmail.com"
+      ],
+      "subject":"Second client, reply all!",
+      "id":"firstclient@gmail.com%20220617104000",
+      "text":"Try it"
+    },
+    {
+      "datetime":"2022.06.17-10:44:37",
+      "sender":"firstclient@gmail.com",
+      "receivers":[
+        "secondclient@gmail.com",
+        "thirdclient@gmail.com"
+      ],
+      "subject":"Final test",
+      "id":"firstclient@gmail.com%20220617104437",
+      "text":"For replying"
+    },
+    {
+      "datetime":"2022.06.17-10:52:54",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "firstclient@gmail.com",
+        "secondclient@gmail.com"
+      ],
+      "subject":"",
+      "id":"thirdclient@gmail.com%20220617105254",
+      "text":""
+    },
+    {
+      "datetime":"2022.06.17-10:56:04",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "firstclient@gmail.com",
+        "secondclient@gmail.com"
+      ],
+      "subject":"",
+      "id":"thirdclient@gmail.com%20220617105604",
+      "text":""
+    },
+    {
+      "datetime":"2022.06.17-10:56:59",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "firstclient@gmail.com",
+        "secondclient@gmail.com"
+      ],
+      "subject":"Goodbye!",
+      "id":"thirdclient@gmail.com%20220617105659",
+      "text":""
+    }
+  ]
+}

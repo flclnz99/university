@@ -1,0 +1,20 @@
+{"received":[
+  {
+  "datetime":"2022.06.16-19:21:40",
+  "sender":"secondclient@gmail.com",
+  "receivers":[
+    "thirdclient@gmail.com"
+  ],
+  "subject":"Test",
+  "id":"secondclient@gmail.com%20220616192140",
+  "text":"Testing"
+},{
+  "datetime":"2022.06.16-20:16:56",
+  "sender":"firstclient@gmail.com",
+  "receivers":[
+    "thirdclient@gmail.com"
+  ],
+  "subject":"Goodmorning",
+  "id":"firstclient@gmail.com%20220616201656",
+  "text":"Hello!"
+}]}

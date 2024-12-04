@@ -1,0 +1,132 @@
+{
+  "received":[
+    {
+      "datetime":"2022.06.15-19:03:49",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "firstclient@gmail.com"
+      ],
+      "subject":"Welcome!",
+      "id":"thirdclient@gmail.com%20220615190349",
+      "text":"Nice to see you here."
+    },
+    {
+      "datetime":"2022.06.15-19:27:58",
+      "sender":"thirdclient@gmail.com",
+      "receivers":[
+        "firstclient@gmail.com"
+      ],
+      "subject":"Still nothing?",
+      "id":"thirdclient@gmail.com%20220615192758",
+      "text":"Prova prova..."
+    }
+  ,{
+  "datetime":"2022.06.16-20:22:01",
+  "sender":"secondclient@gmail.com",
+  "receivers":[
+    "firstclient@gmail.com"
+  ],
+  "subject":"Good evening",
+  "id":"secondclient@gmail.com%20220616202201",
+  "text":"To you"
+},{
+  "datetime":"2022.06.16-20:38:25",
+  "sender":"secondclient@gmail.com",
+  "receivers":[
+    "firstclient@gmail.com"
+  ],
+  "subject":"",
+  "id":"secondclient@gmail.com%20220616203825",
+  "text":""
+},{
+  "datetime":"2022.06.17-10:13:17",
+  "sender":"secondclient@gmail.com",
+  "receivers":[
+    "thirdclient@gmail.com",
+    "firstclient@gmail.com",
+    "secondclient@gmail.com"
+  ],
+  "subject":"Replying to all",
+  "id":"secondclient@gmail.com%20220617101317",
+  "text":""
+},{
+  "datetime":"2022.06.17-10:21:45",
+  "sender":"secondclient@gmail.com",
+  "receivers":[
+    "firstclient@gmail.com",
+    "secondclient@gmail.com"
+  ],
+  "subject":"prova più rec",
+  "id":"secondclient@gmail.com%20220617102145",
+  "text":"ci siete?"
+},{
+  "datetime":"2022.06.17-10:23:29",
+  "sender":"firstclient@gmail.com",
+  "receivers":[
+    "secondclient@gmail.com",
+    "firstclient@gmail.com",
+    "secondclient@gmail.com"
+  ],
+  "subject":"",
+  "id":"firstclient@gmail.com%20220617102329",
+  "text":"hey"
+},{
+  "datetime":"2022.06.17-10:23:54",
+  "sender":"firstclient@gmail.com",
+  "receivers":[
+    "firstclient@gmail.com",
+    "secondclient@gmail.com",
+    "firstclient@gmail.com",
+    "secondclient@gmail.com"
+  ],
+  "subject":"ciao",
+  "id":"firstclient@gmail.com%20220617102354",
+  "text":"ciao"
+},{
+  "datetime":"2022.06.17-10:23:54",
+  "sender":"firstclient@gmail.com",
+  "receivers":[
+    "firstclient@gmail.com",
+    "secondclient@gmail.com",
+    "firstclient@gmail.com",
+    "secondclient@gmail.com"
+  ],
+  "subject":"ciao",
+  "id":"firstclient@gmail.com%20220617102354",
+  "text":"ciao"
+},{
+  "datetime":"2022.06.17-10:26:35",
+  "sender":"firstclient@gmail.com",
+  "receivers":[
+    "firstclient@gmail.com",
+    "secondclient@gmail.com",
+    "thirdclient@gmail.com"
+  ],
+  "subject":"heyyy",
+  "id":"firstclient@gmail.com%20220617102635",
+  "text":"prova a tutti "
+},{
+  "datetime":"2022.06.17-10:32:22",
+  "sender":"firstclient@gmail.com",
+  "receivers":[
+    "firstclient@gmail.com",
+    "firstclient@gmail.com",
+    "secondclient@gmail.com",
+    "thirdclient@gmail.com"
+  ],
+  "subject":"",
+  "id":"firstclient@gmail.com%20220617103222",
+  "text":"ccc"
+},{
+  "datetime":"2022.06.17-10:32:22",
+  "sender":"firstclient@gmail.com",
+  "receivers":[
+    "firstclient@gmail.com",
+    "firstclient@gmail.com",
+    "secondclient@gmail.com",
+    "thirdclient@gmail.com"
+  ],
+  "subject":"",
+  "id":"firstclient@gmail.com%20220617103222",
+  "text":"ccc"
+}]}

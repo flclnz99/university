@@ -1,0 +1,800 @@
+{
+  "received": [
+    {
+      "datetime": "21.11.2020 - 11.58PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "first! let\u0027s try this out",
+      "text": "hey there, I\u0027m using JSON! What about you?"
+    },
+    {
+      "datetime": "21.11.2020 - 11.58PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "second! let\u0027s try this out",
+      "text": "hey there, I\u0027m using JSON! What about you?"
+    },
+    {
+      "datetime": "21.11.2020 - 11.58PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "third! let\u0027s try this out",
+      "text": "hey there, I\u0027m using JSON! What about you?"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "cosa legge il server?",
+      "text": "vediamo un po\u0027 cosa legge il server"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "sembrerebbe...",
+      "text": "funzionare?"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "mi sa di no",
+      "text": "è stato bello creederci"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "daidai",
+      "text": "diedie"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "dsfsdf",
+      "text": "dfgdf"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "sdrff",
+      "text": "dfgsdf"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "dsfgvsdfv",
+      "text": "blabla"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "prova numero milledue",
+      "text": "fai il bravo dai"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "prova numero 1000",
+      "text": "susu fai il bravo dai"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "ma dove sono",
+      "text": "tutte le mail?"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "chi le ha viste",
+      "text": "tutte le mail?"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "prova ",
+      "text": "la riceve?"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "vediamo",
+      "text": "cosa succede"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "fff",
+      "text": "fgdf"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "VEDIAMO",
+      "text": "dfsdf"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "VEDIAMO",
+      "text": "dfsdf"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "VEDIAMO",
+      "text": "dfsdf"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "BEH?",
+      "text": "dfsdf"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "funziona?",
+      "text": "mah..."
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "funziona?",
+      "text": "mah..."
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "funziona?",
+      "text": "mah..."
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "does it?",
+      "text": "does it?"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "does it?",
+      "text": "does it?"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "mail1",
+      "text": "textUno"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "prova",
+      "text": "prova"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "blabla",
+      "text": "blabla"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "CHAMPAGNE",
+      "text": "pliz"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "siiiiiiiiiiiiiiiiiiiiii",
+      "text": "pliz"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "ciao lori",
+      "text": "blablabla"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "ciao",
+      "text": "ciao"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "uno",
+      "text": "nuo"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "no",
+      "text": "no"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "ww",
+      "text": "rr"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "ee",
+      "text": "qq"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "ee",
+      "text": "qq"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "ee",
+      "text": "qq"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "ss",
+      "text": "aa"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "ss",
+      "text": "aa"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "aa",
+      "text": "sff"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "dd",
+      "text": "aaa"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "dd",
+      "text": "aaa"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "ss",
+      "text": "aa"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "ss",
+      "text": "aa"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "ss",
+      "text": "fff"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "ssdd",
+      "text": "fffcc"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "ssdd",
+      "text": "fffcc"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "otheruser@gmail.com"
+      ],
+      "subject": "ssdd",
+      "text": "fffcc"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "otheruser@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "non ci credo",
+      "text": "a quanto pare funziona"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "otheruser@gmail.com"
+      ],
+      "subject": "secondo",
+      "text": "fffcc"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "otheruser@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "provauno",
+      "text": "provauno"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "otheruser@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "provadue",
+      "text": "provadue"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "otheruser@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "da nice a nice e other",
+      "text": "ciao"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "otheruser@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "da other a other e nice",
+      "text": "ciaociao"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "otheruser@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "tentativo",
+      "text": "uno"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "otheruser@gmail.com"
+      ],
+      "subject": "prova123",
+      "text": "abc"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com",
+        "otheruser@gmail.com"
+      ],
+      "subject": "wiii",
+      "text": "rrrrr"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "otheruser@gmail.com",
+      "receivers": [
+        "otheruser@gmail.com",
+        "niceproject@gmail.com"
+      ],
+      "subject": "adesso funzionerà",
+      "text": "i\u0027m sure"
+    },
+    {
+      "datetime": "23.03.21-04.12PM",
+      "sender": "niceproject@gmail.com",
+      "receivers": [
+        "niceproject@gmail.com"
+      ],
+      "subject": "who's a pretty json?",
+      "text": "You are!!"
+    },
+    {
+      "datetime":"23.03.21-04.12PM",
+      "sender":"niceproject@gmail.com",
+      "receivers":[
+        "niceproject@gmail.com"
+      ],
+      "subject":"not that pretty...",
+      "text":"sigh"
+    },
+    {
+      "datetime":"23.03.21-04.12PM",
+      "sender":"niceproject@gmail.com",
+      "receivers":[
+       "niceproject@gmail.com"
+        ],
+      "subject":"see if it's pretty",
+      "text":"is it?"
+    }
+  ,{
+  "datetime":"12\/02\/2022 15:01:59",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"data",
+  "text":"data"
+},{
+  "datetime":"12.02.2022 15:02:53",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"prova",
+  "text":"data"
+},{
+  "datetime":"12.02.2022 15:03:25",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com",
+    " otheruser@gmail.com"
+  ],
+  "subject":"prova",
+  "text":"data"
+},{
+  "datetime":"12.02.2022 15:17:14",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com",
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:17:14",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com",
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:17:30",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com",
+    "niceproject"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:17:57",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com",
+    "niceproject"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:18:12",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com",
+    "otheruser@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:18:40",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:20:30",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:20:36",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com",
+    "ooo"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:24:25",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"s",
+  "text":"s"
+},{
+  "datetime":"12.02.2022 15:28:07",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:38:13",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:43:20",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:45:18",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:52:22",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:52:25",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:52:26",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:52:40",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:52:45",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com",
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 15:52:45",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com",
+    "niceproject@gmail.com"
+  ],
+  "subject":"",
+  "text":""
+},{
+  "datetime":"12.02.2022 16:08:57",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"prova id",
+  "id":"%",
+  "text":"prova id"
+},{
+  "datetime":"12.02.2022 16:16:21",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"id",
+  "id":"niceproject@gmail.com12.02.2022 16:16:21",
+  "text":"id"
+},{
+  "datetime":"12.02.2022 16:30:09",
+  "sender":"niceproject@gmail.com",
+  "receivers":[
+    "niceproject@gmail.com"
+  ],
+  "subject":"prova id ",
+  "id":"niceproject@gmail.com%%12.02.2022 16:30:09",
+  "text":"prova id"
+}] }

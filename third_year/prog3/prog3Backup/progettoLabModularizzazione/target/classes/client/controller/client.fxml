@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controller.ClientController">
+    <children>
+        <SplitPane dividerPositions="0.2022977022977023" orientation="VERTICAL" prefHeight="603.0" prefWidth="901.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                        <Label layoutX="422.0" layoutY="14.0" text="Benvenuto" />
+                        <Label fx:id="labelUsername" layoutX="409.0" layoutY="50.0" prefHeight="18.0" prefWidth="98.0" wrapText="true" />
+                  <Button fx:id="buttonExit" layoutX="825.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#disconnect" text="Exit" />
+                  <!--<Button fx:id="buttonStart" layoutX="764.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#startListening" text="Start" />
+                   --> </children></AnchorPane>
+                <SplitPane dividerPositions="0.22255689424364122" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <GridPane prefHeight="64.0" prefWidth="130.0" translateY="-90.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="42.4" minHeight="10.0" prefHeight="42.4" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="30.799999999999997" minHeight="10.0" prefHeight="30.799999999999997" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="15.40000762939453" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label contentDisplay="CENTER" prefHeight="18.0" prefWidth="50.0" text="Received" translateX="70.0" />
+                                        <Label prefHeight="18.0" prefWidth="25.0" text="Sent" translateX="77.0" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                                <Button fx:id="buttonNewEmail" mnemonicParsing="false" onMouseClicked="#openMailEditor" text="New Mail" />
+                                <Button fx:id="buttonSend" mnemonicParsing="false" onMouseClicked="#sendEmail" text="Send" translateY="8.0" />
+                                <Button mnemonicParsing="false" text="Delete" translateY="15.0" />
+                            </children>
+                        </VBox>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="EmailList" prefHeight="477.0" prefWidth="698.0" />
+                                <SplitPane fx:id="writeEmailPane" dividerPositions="0.11746031746031746" layoutX="1.0" orientation="VERTICAL" prefHeight="477.0" prefWidth="698.0" style="visibility: hidden;">
+                                    <items>
+                                        <GridPane>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.99998474121094" minWidth="10.0" prefWidth="27.800000953674317" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.99998474121094" minWidth="10.0" prefWidth="117.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.99998474121094" minWidth="10.0" prefWidth="47.400000000000006" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.4" minWidth="10.0" prefWidth="201.8" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.0" minWidth="10.0" prefWidth="78.39999999999998" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="36.40000190734863" minHeight="10.0" prefHeight="24.800000000000004" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="To:" translateX="5.0" />
+                                                <Label text="Subject:" GridPane.columnIndex="2" />
+                                                <TextField fx:id="EmailReceiver" layoutX="70.0" layoutY="12.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="109.0" GridPane.columnIndex="1" />
+                                                <TextField fx:id="EmailSubject" layoutX="70.0" layoutY="38.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="196.0" GridPane.columnIndex="3" />
+                                                <Button fx:id="buttonCloseEditor" mnemonicParsing="false" onMouseClicked="#closeMailEditor" text="✕" translateX="36.0" GridPane.columnIndex="4" />
+                                                <Button layoutX="398.0" layoutY="14.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="27.0" text="_" translateX="6.0" GridPane.columnIndex="4" />
+                                            </children>
+                                        </GridPane>
+                                        <TextFlow prefWidth="461.0" textAlignment="CENTER">
+                                            <children>
+                                                <TextArea fx:id="mailContent" prefHeight="422.0" prefWidth="696.0" />
+                                            </children></TextFlow>
+                                    </items>
+                                </SplitPane>
+                            </children></Pane>
+                    </items>
+                </SplitPane>
+            </items>
+        </SplitPane>
+    </children>
+</FlowPane>
