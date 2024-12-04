@@ -1,0 +1,352 @@
+[
+  {
+  "real": "facebook.com",
+  "gen": "facebook.com",
+  "ed": 0
+  },
+  {
+  "real": "airporthandling.eu",
+  "gen": "airporthandling.eu",
+  "ed": 0
+  },
+  {
+  "real": "zcsazzurrowebportal.com",
+  "gen": "zcsazzurrowebportal.",
+  "ed": 3
+  },
+  {
+  "real": "bing.com",
+  "gen": "bing.com.",
+  "ed": 1
+  },
+  {
+  "real": "mediaset.it",
+  "gen": "mediaset.it",
+  "ed": 0
+  },
+  {
+  "real": "ilfattoquotidiano.it",
+  "gen": "ilfattoquotidiano.it",
+  "ed": 0
+  },
+  {
+  "real": "twitter.com",
+  "gen": "twitter.com",
+  "ed": 0
+  },
+  {
+  "real": "transfermarkt.it",
+  "gen": "transfermarkt.it",
+  "ed": 0
+  },
+  {
+  "real": "search-hub.com",
+  "gen": "search-hub.com",
+  "ed": 0
+  },
+  {
+  "real": "wikipedia.org",
+  "gen": "wikipedia.org",
+  "ed": 0
+  },
+  {
+  "real": "poste.it",
+  "gen": "poste.it",
+  "ed": 0
+  },
+  {
+  "real": "repubblica.it",
+  "gen": "repubblica.it",
+  "ed": 0
+  },
+  {
+  "real": "procyclinggame.com",
+  "gen": "procyclinggame.com",
+  "ed": 0
+  },
+  {
+  "real": "ilpost.it",
+  "gen": "ilpost.it",
+  "ed": 0
+  },
+  {
+  "real": "sky.it",
+  "gen": "sky.it.",
+  "ed": 1
+  },
+  {
+  "real": "ilsole24ore.com",
+  "gen": "itsole24ore.com.",
+  "ed": 2
+  },
+  {
+  "real": "ilmessaggero.it",
+  "gen": "illmessaggero.it",
+  "ed": 1
+  },
+  {
+  "real": "yahoo.com",
+  "gen": "yahoo.com",
+  "ed": 0
+  },
+  {
+  "real": "fanpage.it",
+  "gen": "fannpage.it",
+  "ed": 1
+  },
+  {
+  "real": "my-personaltrainer.it",
+  "gen": "my-personaltrainer.it",
+  "ed": 0
+  },
+  {
+  "real": "fantacalcio.it",
+  "gen": "fantacalcio.it",
+  "ed": 0
+  },
+  {
+  "real": "singlesternlyshabby.com",
+  "gen": "singlesternlyshabby.",
+  "ed": 3
+  },
+  {
+  "real": "booking.com",
+  "gen": "booking.com",
+  "ed": 0
+  },
+  {
+  "real": "weather.com",
+  "gen": "weather.com",
+  "ed": 0
+  },
+  {
+  "real": "staseraintv.com",
+  "gen": "staseraintv.com",
+  "ed": 0
+  },
+  {
+  "real": "google.it",
+  "gen": "google.it",
+  "ed": 0
+  },
+  {
+  "real": "messinanelpallone.it",
+  "gen": "messinanelpallone.it",
+  "ed": 0
+  },
+  {
+  "real": "bakecaincontri.com",
+  "gen": "bakecaincontri.com",
+  "ed": 0
+  },
+  {
+  "real": "tuttomercatoweb.com",
+  "gen": "tuttomercatoweb.com",
+  "ed": 0
+  },
+  {
+  "real": "whatsap.com",
+  "gen": "whatsap.com",
+  "ed": 0
+  },
+  {
+  "real": "fandom.com",
+  "gen": "fandom.com",
+  "ed": 0
+  },
+  {
+  "real": "virgilio.it",
+  "gen": "virgilioit",
+  "ed": 1
+  },
+  {
+  "real": "googleadservices.com",
+  "gen": "googleadservices.com",
+  "ed": 0
+  },
+  {
+  "real": "spazionapoli.net",
+  "gen": "spazionapoli.net",
+  "ed": 0
+  },
+  {
+  "real": "giallozafferano.it",
+  "gen": "giallozafferano.it",
+  "ed": 0
+  },
+  {
+  "real": "twitch.tv",
+  "gen": "twitch.tv.",
+  "ed": 1
+  },
+  {
+  "real": "youtube.com",
+  "gen": "youtube.com",
+  "ed": 0
+  },
+  {
+  "real": "google.com",
+  "gen": "google.com",
+  "ed": 0
+  },
+  {
+  "real": "bit.ly",
+  "gen": "bit.ly",
+  "ed": 0
+  },
+  {
+  "real": "tuttojuve.com",
+  "gen": "tuttojure.com",
+  "ed": 1
+  },
+  {
+  "real": "reddit.com",
+  "gen": "redditt.com",
+  "ed": 1
+  },
+  {
+  "real": "corrieredellosport.it",
+  "gen": "corrieredellosport.it",
+  "ed": 0
+  },
+  {
+  "real": "tuttosport.com",
+  "gen": "tuttosport.com",
+  "ed": 0
+  },
+  {
+  "real": "multiplayer.it",
+  "gen": "multiplayer.it",
+  "ed": 0
+  },
+  {
+  "real": "amazon.it",
+  "gen": "amazon.it.",
+  "ed": 1
+  },
+  {
+  "real": "gazzetta.it",
+  "gen": "gazzettait",
+  "ed": 1
+  },
+  {
+  "real": "mygpteam.com",
+  "gen": "mygpteam.com",
+  "ed": 0
+  },
+  {
+  "real": "stramingcommunity.best",
+  "gen": "stramingcommunity.bes",
+  "ed": 1
+  },
+  {
+  "real": "ansa.it",
+  "gen": "ansa.it",
+  "ed": 0
+  },
+  {
+  "real": "scoreboard.it",
+  "gen": "scoreboard.It",
+  "ed": 0
+  },
+  {
+  "real": "duckduckgo.com",
+  "gen": "duckduckgocom",
+  "ed": 1
+  },
+  {
+  "real": "liberoquotidiano.it",
+  "gen": "liberoquotidiano.it",
+  "ed": 0
+  },
+  {
+  "real": "instagram.com",
+  "gen": "instagram.com",
+  "ed": 0
+  },
+  {
+  "real": "immobiliare.it",
+  "gen": "immobiliereit",
+  "ed": 2
+  },
+  {
+  "real": "bankier.pl",
+  "gen": "bankier.pl2",
+  "ed": 1
+  },
+  {
+  "real": "libero.it",
+  "gen": "liberoit",
+  "ed": 1
+  },
+  {
+  "real": "lastampa.it",
+  "gen": "Lastampait",
+  "ed": 1
+  },
+  {
+  "real": "chaturbate.com",
+  "gen": "chaturbate.com",
+  "ed": 0
+  },
+  {
+  "real": "ebay.it",
+  "gen": "ebay.it",
+  "ed": 0
+  },
+  {
+  "real": "tuttonapoli.net",
+  "gen": "tuttonapolinet",
+  "ed": 1
+  },
+  {
+  "real": "ilgiornale.it",
+  "gen": "alglornale.it",
+  "ed": 2
+  },
+  {
+  "real": "dagospia.com",
+  "gen": "dagospia.com",
+  "ed": 0
+  },
+  {
+  "real": "corriere.it",
+  "gen": "corriereit",
+  "ed": 1
+  },
+  {
+  "real": "diretta.it",
+  "gen": "direttait",
+  "ed": 1
+  },
+  {
+  "real": "3bmeteo.com",
+  "gen": "3bmeted.com",
+  "ed": 1
+  },
+  {
+  "real": "asurascans.com",
+  "gen": "asurascenscom",
+  "ed": 2
+  },
+  {
+  "real": "tripadvisor.it",
+  "gen": "tripadvisor.it",
+  "ed": 0
+  },
+  {
+  "real": "tiktok.com",
+  "gen": "tiktok.com",
+  "ed": 0
+  },
+  {
+  "real": "librarymusicthemes.com",
+  "gen": "librarymusicthemes.cc",
+  "ed": 2
+  },
+  {
+  "real": "fantasportal.com",
+  "gen": "fantasportalcom",
+  "ed": 1
+  }
+]

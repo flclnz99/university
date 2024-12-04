@@ -1,0 +1,47 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2757
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red251\green2\blue7;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c14913\c0;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww19240\viewh10320\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs72 \cf2 Tesi
+\fs36 \cf0 \
+
+\f1\b slide 2-3 (1 min)
+\f0\b0 \
+
+\f1\b [2]
+\f0\b0 Questa tesi si articola in 4 fasi principali, che sono:\
+-introduzione;\
+(le sezioni dedicate ai 2 modelli che ho trattato, quindi)\
+-TrOCR;\
+-GlyphNet;\
+-Conclusioni.\
+Nell\'92introduzione andr\'f2 a spiegare quali sono state le motivazioni che hanno partato allo sviluppo della tesi, in particolare vedremo che ho individuato 2 quesiti principali, e proseguir\'f2 con del contesto su attacchi analizzati e modelli utilizzati.\
+Nella parte dedicata a TrOCR ci sar\'e0 ovviamente la descrizione dell\'92architettura del modello, del dataset e delle metodologie utilizzate per crearlo e un\'92analisi approfondita dei domini che il modello \'e8 riuscito a generare a partire dalle immagini che riceve in input. La sezione di GlyphNet \'e8 sostanzialmente speculare a quella del primo modello, con la differenza che, essendo un classificatore, nei risultati avremo il risultato (appunto) della classificazione dei domini generati da TrOCR. Infine nelle conclusioni dar\'f2 una risposta ai due quesiti che tra poco presenter\'f2 e far\'f2 una panoramica generale sui risultati.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 [3]\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 slide 4 (1 min)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 [4] 
+\f0\b0 Lo squatting \cf3 \expnd0\expndtw0\kerning0
+prevede la registrazione di un nome di dominio che assomiglia a un\'92organizzazione o a una persona nota, senza avere per\'f2 l\'92autorizzazione. L\'92obiettivo \'e8 fare un profitto dalla buona volont\'e0 della persona o dell\'92organizzazione o di causare un danno reputazionale. \
+Tipicamente collegato allo squatting \'e8 il phishing, ovvero la pratica di indirizzare gli utenti su siti web ingannevoli, tipicamente molto simili se non identici a siti web reali, con l\'92obiettivo di sottrarre denaro o informazioni riservate.\
+Typosquatting e attacchi omografici sono gli attacchi che sono argomento principale di questa tesi. Il typosquatting \'e8 una variante del pshishing che sfrutta per\'f2 gli errori di battitura pi\'f9 comuni degli utenti. L\'92attacco omografico \'e8 sicuramente l\'92attacco pi\'f9 sofisticato tra quelli visti, e si tratta principalmente di scrivere domini reali, utilizzando per\'f2 lettere che si somigliano molto o che sono addirittura identiche ma appartenenti ad alfabeti diversi.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2 \cf3 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \kerning1\expnd0\expndtw0 slide 5 (1 min)\
+[5] 
+\f0\b0 Modelli generativi: questi modelli mirano a generare esempi di dati molto simili ai dati su cui sono stati addestrati. Agiscono cercando di catturare quante pi\'f9 caratteristiche dai dati di partenza per poi appunto cercare di generare nuovi  esempi quanto pi\'f9 simili ai primi. Un esempio sono gli autoencoder, come TrOCR, i quali sono formati da un encoder (che prende i dati di input e li comprime in una rappresentazione di spazio latente, diminuendone la dimensione) e da un decoder (ricorverte i dati in una rappresentazione con le stesse dimensioni degli originali).\cf3 \expnd0\expndtw0\kerning0
+\
+Cnn: le reti neurali convoluzionali invece prendono l\'92immagine in input e le applicano i filtri convoluzionali. Questi filtri scorrono lungo tutta l\'92immagine e consentono alla rete di individuare elementi di interesse come pattern, texture e bordi. Le cnn attention-based (GlyphNet) sono un\'92evoluzione delle cnn che sostanzialmente ha la capacit\'e0 di concentrarsi su regioni specifiche dell\'92immagine.
+\f2 \
+}

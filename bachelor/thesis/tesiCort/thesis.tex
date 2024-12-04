@@ -1,0 +1,143 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	MSc THESIS TEMPLATE
+%	developed for my master thesis at the Universitá di Torino
+%
+%	by Eugenio Senes (eugenio.senes@gmail.com)
+%
+%	released under MIT license, so share, modify and enjoy, but quoting the author !
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% DOCUMENT CLASS (alternative to book is 'report')
+% Print just right page or both sides (comment the other one)
+\documentclass[12pt,a4paper,openright,oneside]{book}	%%One sided
+%\documentclass[12pt,a4paper,openright,twoside]{book}	%%Double sided
+
+\usepackage[most]{tcolorbox}
+
+
+%% SET MARGINS OF THE PAGES
+\usepackage{geometry}
+\geometry{a4paper,portrait, left=35mm, right=20mm, top=35mm, bottom=30mm}
+\usepackage[section]{placeins}
+%% HEADERS AND FOOTERS
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} 			%clears default header and footer
+\rhead{} 			%right head
+\lhead{ \leftmark} 	%left head
+\rfoot{\thepage}
+%%consider using also chead, cfoot, lfoot
+%coherce the plain stile to this (e.g. the first page of every chapter)
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\rfoot{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+%% CLEAR PAGE WITHOUT NUMBER AT THE BEGINNING OF CHAPTERS
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{%
+  \clearpage
+  {\pagestyle{empty}\origdoublepage}%
+}
+%% ALLOW PAGE ROTATION
+\usepackage{lscape}
+
+%% HYPERTEXT SETUP
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+%% PDF SETTINGS
+\hypersetup{
+    pdfauthor={AuthorName},
+    pdftitle={shortTitle},
+    pdfsubject={subject},
+    pdfkeywords={keyword1, keyword2}
+}
+%% FONTS AND SYMBOLS
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}		%%fonts for the mathematical rendering of formulas
+\usepackage{amssymb}
+\usepackage{amsmath}
+%% CHAPTERS STRUCTURE
+\usepackage[italian]{babel} %%Set English as main language of the document
+%% FIGURES
+\usepackage{graphicx}
+\usepackage{subfigure}		%%allow side by side figures with single caption
+%% TABLES
+\usepackage{multirow}		%%allow to merge rows in the tables
+\usepackage{booktabs}		%%allow use of \toprule, \midrule, \bottomrule in tables
+%%CAPTIONS
+\usepackage{caption}
+%% BIBLIOGRAPHY
+\usepackage[babel]{csquotes}
+%% CODE LISTINGS
+\usepackage{listings}		%%allow to use code listings
+
+%% HYPENATON
+\hyphenation{te-si pip-po paperino}	%manual hyphenation
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% BEGIN DOCUMENT
+\begin{document}
+
+%%%%%% HEAD  OF THE DOCUMENT
+\frontmatter
+%%FRONT PAGE
+\input{head/frontPage.tex}
+%\input{head/frontPage-cr.tex}
+\clearemptydoublepage
+%%DEDICATION (the initial quote)
+\input{head/dedication}
+\clearemptydoublepage
+%%ABSTRACT
+\input{head/abstract}
+\clearemptydoublepage
+%%INDEXES
+%summary
+\textit{Dichiaro di essere responsabile del contenuto dell'elaborato che
+presento al fine del conseguimento del titolo, di non avere plagiato in
+tutto o in parte il lavoro prodotto da altri e di aver citato le fonti
+originali in modo congruente alle normative vigenti in materia di plagio
+e di diritto d'autore. Sono inoltre consapevole che nel caso la mia
+dichiarazione risultasse mendace, potrei incorrere nelle sanzioni
+previste dalla legge e la mia ammissione alla prova finale potrebbe
+essere negata.}
+\tableofcontents
+\clearemptydoublepage
+
+%%%%%% BODY OF THE DOCUMENT
+\mainmatter
+%%INTRODUCTION
+\input{body/chapter1.tex}
+\clearemptydoublepage
+% %% CHAPTERS
+% add any further chapter file here
+\input{body/chapter2.tex}
+\clearemptydoublepage
+\input{body/chapter3.tex}
+\clearemptydoublepage
+\input{body/chapter4.tex}
+\clearemptydoublepage
+\input{body/chapter5.tex}
+\clearemptydoublepage
+
+%%%% TAIL OF THE DOCUMENT
+\backmatter
+\clearemptydoublepage
+%bibliography
+\addcontentsline{toc}{chapter}{Bibliografia}
+\bibliography{bibliography/bibThesis}
+\bibliographystyle{ieeetr}
+\clearemptydoublepage
+
+
+\end{document}
