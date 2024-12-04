@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: spike-dockerfile
-
-server:
-  port: 8090

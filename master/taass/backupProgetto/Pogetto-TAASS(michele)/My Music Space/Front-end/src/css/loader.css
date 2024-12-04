@@ -1,0 +1,126 @@
+@property --a
+{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+#loaderBar{
+    display: none;
+}
+
+.loader{
+    position: absolute;
+    margin:20% 40%;
+    z-index: 30;
+    width: 150px;
+    height: 150px;
+    //background: radial-gradient(circle, rgba(62, 153, 207,0) 65%, rgb(62, 153, 207) 0%, rgb(62, 153, 207) 100%);
+    //background: repeating-conic-gradient(from 10deg, var(--clr) 0%, var(--clr) 0%, transparent 5%, transparent 40%, var(--clr) 100%);
+    --clr: #3E99CF;
+    border-radius: 50%;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+
+}
+
+.loader::before{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background: transparent;
+    border-radius: 50%;
+}
+
+.loader span{
+    position: absolute;
+    inset: 0;
+}
+
+.loader span::before {
+    content: '';
+    position: absolute;
+    left: 96px;
+    width: 4px;
+    height: 4px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--clr),
+    0 0 20px var(--clr),
+    0 0 40px var(--clr);
+}
+
+#span1::before{
+    width: 8px;
+    height: 8px;
+}
+#span2::before{
+    width: 6px;
+    height: 6px;
+}
+#span3::before{
+    width: 10px;
+    height: 10px;
+}
+#span4::before{
+    width: 12px;
+    height: 12px;
+}
+#span5::before{
+    width: 14px;
+    height: 14px;
+}
+#span6::before{
+    width: 16px;
+    height: 16px;
+}
+#span7::before{
+    width: 18px;
+    height: 18px;
+}
+
+#span0{
+    margin: 15px;
+    left:5px;
+}
+
+#span1{
+    margin: 40px;
+    left: 0px;
+}
+#span2
+{
+    margin: 25px;
+    left: 5px;
+}
+#span3{
+    margin: 60px;
+    left: -15px;
+}
+
+#span4{
+    margin: 90px;
+    left: -48px;
+}
+#span5{
+    margin: 120px;
+    left: -98px;
+}
+#span6{
+    margin: 137px;
+    left: -150px;
+}
+#span7{
+    margin: 135px;
+    left: -187px;
+}

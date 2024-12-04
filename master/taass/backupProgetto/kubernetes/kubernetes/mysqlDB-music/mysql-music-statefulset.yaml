@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql-music
+  #namespace: mymusicspace
+
+  labels:
+    app: mysql-music
+
+spec:
+  serviceName: mysql-music-svc
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-music
+  
+  template:
+    metadata:
+      labels:
+        app: mysql-music
+    spec:
+      containers:
+      - name: mysql-music
+        imagePullPolicy: IfNotPresent
+        image: mysql:8.0
+        env:
+          - name: MYSQL_USER
+            value: aclm
+          - name: MYSQL_PASSWORD
+            value: ricerca_Taass
+          - name: MYSQL_DATABASE
+            value: Taass_Db
+          - name: MYSQL_ROOT_PASSWORD
+            value: ricerca
+      
+        ports:
+          - containerPort: 3306
+        volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: mysql-music-data
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "256Mi"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+      volumes:
+        - name: mysql-music-data
+          persistentVolumeClaim:
+            claimName: "mysql-music-pvc"

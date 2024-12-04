@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-deployment
+  labels:
+    app: mongodb
+
+# Specs for mongodb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  
+  # Blueprint for mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo
+        ports:
+        - containerPort: 27017
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: rootuser
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: rootpass
+        # volumeMounts:
+        # - name: mongodbdata
+        #   mountPath: /data/db
+# 
+
+# Service for mongodb
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+  labels:
+    app: mongodb
+
+spec:
+  ports:
+  - port: 27017
+    targetPort: 27017
+  
+  # Decrive l'endpoint a cui fare forward delle richieste (label POD)
+  selector:
+    app: mongodb

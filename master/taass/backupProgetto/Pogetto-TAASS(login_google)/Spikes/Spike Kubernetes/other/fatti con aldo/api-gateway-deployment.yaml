@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Deployment
+metadata:
+  namespace: mymusicspace
+  name: api-gateway-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway-service
+  template:
+    metadata:
+      labels:
+        app: api-gateway-service
+    spec:
+      containers:
+        - name: api-gateway-service
+          image: api-gateway-service
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: EUREKA_SERVER
+              #value: http://admin:SwagMedAdmin!!@discovery-service.swagmed.svc.cluster.local:8761/eureka/
+              value: http://discovery-service:8761/eureka/
+            - name: EUREKA_HOSTNAME
+              value: http://discovery-service:8761/eureka/
+            - name: ALLOWED_ORIGINS
+              value: "*"
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "500Mi"
+            limits:
+              memory: "800Mi"
+              cpu: "1000m"

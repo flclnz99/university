@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+
+# Specifiche del Service
+metadata:
+  name: # Nome del service
+spec:
+  selector:
+
+# Label che deve coincidere con la label del deployment
+# Questa label deve coincidere con la label del POD nel deployment
+    app: 
+  ports:
+    - name: TCP
+      port: 80
+      targetPort: 8080
+
+# Il target Port nel service DEVE CORRISPONDERE al containerPort di un pod in un deployment
+# La port del service indica la sua porta di accesso
+
+# Il service serve per rendere accessibile un pod.
+# Ogni pod ha il suo service interno. 
+# Service MongoDB
+# Service ChatService
+

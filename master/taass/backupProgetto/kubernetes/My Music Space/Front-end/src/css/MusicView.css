@@ -1,0 +1,335 @@
+/*Music View*/
+@font-face { 
+    font-family: myFirstFont; 
+    src: url("src/font/ATTriumvirate-CondensedBlac.ttf"); 
+  } 
+  
+.MusicView{
+    width:100%;
+    display:block;
+    opacity: 1;
+    top:5%;
+    margin-top: 7%;
+    height: 85vh;
+    overflow-y: auto;      
+}
+
+.Container {
+    position: relative;
+    width: 97%;
+    border-radius: 5vh;
+    background-color: #232425;
+    overflow-x: auto;
+    height: 30%;
+}
+
+.scrollBar{
+    white-space: nowrap;
+}
+
+.Container .scrollBar {
+    min-width: 1500px;
+    height: 100%;
+}
+
+
+.claudio{
+    width:90%;
+    margin:30px auto;
+    /*background:lightgrey;*/
+    height:200px;
+    line-height:200px;
+    overflow: hidden;
+    }
+  
+.sinistro, .destro {
+    margin-top: 0.8%;
+    padding:0;
+    width:32%;
+    height:90%;
+    background:cornflowerblue;
+    text-align:center;
+    color: #fff;
+    font-size:30px;
+    float:left;
+    margin-left: 1%;
+    border-radius: 2vh;
+    overflow: hidden;
+    }
+
+.title {
+    color: #BFBFBF;
+    font-weight: 700;
+    font-style: italic;
+    margin: 2vh auto;
+    margin-left: 5vh;
+    margin-top: 1vh;
+    position: relative
+}
+
+.externDiv{
+    height: 100%;
+    border-radius: 100%;
+    width: 70%;
+    position: relative;
+    left: 15%;
+    right: 15%;
+}
+
+.albumDiv {
+    position: relative;
+    width: 18%;
+    height: 61%;
+    float: left;
+    top:10%;
+}
+
+.artistDiv {
+    position: relative;
+    width: 18%;
+    height: 61%;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    top:10%;
+}
+
+.songDiv {
+    position: relative;
+    width: 18%;
+    height: 61%;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    top:10%;
+}
+
+
+#albumImg,#artistImg,#songImg{
+    width: 100%;
+    height: 100%;
+    box-shadow: 4px 4px 40px 0px rgb(0, 0, 0), 4px 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+#albumImg{
+    border-radius: 10%;
+}
+
+#artistImg{
+    border-radius: 100%;
+    background-color: #BFBFBF;
+}
+
+.description{
+    color: white;
+    font-family: myFirstFont;
+    font-size: .8rem;
+    margin-top: 20%;
+    margin-left: 0%;
+    text-align: center;
+    font-style: italic;
+}
+
+.forArtImg{
+    position: relative;
+    top: -15%;
+    width: 60%;
+    height: 115%;
+}
+
+.forAlbumImg{
+    position: relative;
+    top: -30%;
+    left: -8%;
+    width: 120%;
+    height: 160%;
+    border-radius: 2vh;
+}
+
+.forSongImg{
+    position: relative;
+    top: -30%;
+    left: -8%;
+    width: 120%;
+    height: 160%;
+    border-radius: 2vh;
+}
+#albumImg,#artistImg,#songImg,.forAlbumImg,.forArtImg,.forSongImg:hover{
+    cursor: pointer;
+}
+.externDiv:hover{
+    transform: scale(1.06);
+}
+.sinistro:hover{
+    transform: scale(1.02);
+}
+.destro:hover{
+    transform: scale(1.02);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+    .MusicView{
+        width:100%;
+        display:block;
+        opacity: 1;
+        margin-top: 52%;
+        margin-left: -2.5%;
+        height: 95vh;
+        overflow-y: auto;      
+    }
+    
+    .Container {
+        position: relative;
+        width: 97%;
+        border-radius: 5vh;
+        background-color: #232425;
+        overflow-x: auto;
+        height: 20%;
+    }
+    
+    .scrollBar{
+        height: 100%;
+        min-width: 1500px;
+        white-space: nowrap;
+    }
+    
+    
+    
+    .claudio{
+        display: none;
+        width:90%;
+        margin:30px auto;
+        height:200px;
+        line-height:200px;
+        overflow: hidden;
+        }
+        
+      
+    .sinistro, .destro {
+        margin-top: 0.8%;
+        padding:0;
+        width:32%;
+        height:90%;
+        background:cornflowerblue;
+        text-align:center;
+        color: #fff;
+        font-size:30px;
+        float:left;
+        margin-left: 1%;
+        border-radius: 2vh;
+        overflow: hidden;
+        }
+    
+    .title {
+        color: #BFBFBF;
+        font-weight: 700;
+        font-style: italic;
+        margin: 0.7vh auto;
+        margin-left: 5vh;
+        margin-top: 1vh;
+        position: relative
+    }
+    
+    .externDiv{
+        height: 100%;
+        border-radius: 100%;
+        width: 70%;
+        position: relative;
+        left: 15%;
+        right: 15%;
+    }
+    
+    .albumDiv {
+        position: relative;
+        width: 18%;
+        height: 61%;
+        float: left;
+        top: 10%;
+    }
+    
+    .artistDiv {
+        position: relative;
+        width: 18%;
+        height: 61%;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+        top:10%;
+    }
+    
+    .songDiv {
+        position: relative;
+        width: 18%;
+        height: 61%;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+        top:10%;
+    }
+    
+    
+    #albumImg,#artistImg,#songImg{
+        width: 100%;
+        height: 100%;
+        box-shadow: 4px 4px 40px 0px rgb(0, 0, 0), 4px 6px 20px 0 rgba(0, 0, 0, 0.19)
+    }
+    
+    #albumImg{
+        border-radius: 10%;
+    }
+    
+    #artistImg{
+        border-radius: 100%;
+        background-color: #BFBFBF;
+    }
+    
+    .description{
+        color: white;
+        font-family: myFirstFont;
+        font-size: .8rem;
+        margin-top: 20%;
+        margin-left: 0%;
+        text-align: center;
+        font-style: italic;
+    }
+    
+    .forArtImg{
+        position: relative;
+        top: -15%;
+        width: 60%;
+        height: 115%;
+    }
+    
+    .forAlbumImg{
+        position: relative;
+        top: -30%;
+        left: -8%;
+        width: 120%;
+        height: 160%;
+        border-radius: 2vh;
+    }
+    
+    .forSongImg{
+        position: relative;
+        top: -30%;
+        left: -8%;
+        width: 120%;
+        height: 160%;
+        border-radius: 2vh;
+    }
+}

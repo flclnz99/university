@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  #namespace: swagmed
+  name: api-gateway-service
+  labels:
+    app: api-gateway-service
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+      nodePort: 30012
+      
+  selector:
+    app: api-gateway-service

@@ -1,0 +1,143 @@
+
+@-moz-keyframes spin {
+    to {
+        -moz-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes myAnim {
+    0%,to {
+        transform-origin: 50% 50%
+    }
+
+    15% {
+        transform: translateY(-15px) rotate(-6deg)
+    }
+
+    30% {
+        transform: translateY(7px) rotate(6deg)
+    }
+
+    45% {
+        transform: translateY(-7px) rotate(-3.6deg)
+    }
+
+    60% {
+        transform: translateY(5px) rotate(2.4deg)
+    }
+
+    75% {
+        transform: translateY(-2px) rotate(-1.2deg)
+    }
+}
+
+.ShopView {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    transition: display 0s,opacity .5s linear
+}
+
+.Vinyl,.Vinyl:hover {
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+    animation-play-state: paused
+}
+
+.Vinyl:hover {
+    animation-play-state: running
+}
+
+.ShopView p {
+    float: left;
+    top: 0;
+    left: 25%;
+    position: relative;
+    color: #fff;
+    font-weight: 700
+}
+
+.MerchProduct img:hover {
+    transform: scale(1.2)
+}
+
+.MerchProduct,.TicketProduct,.VinylProduct {
+    top: 1vh;
+    position: relative;
+    height: 100%;
+    width: 20%;
+    float: left
+}
+
+.MerchProduct img,.VinylProduct img {
+    margin-left: 25%;
+    float: left;
+    position: relative
+}
+
+.VinylProduct img {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50vh
+}
+
+.MerchProduct img {
+    width: 18vh;
+    height: 18vh;
+    margin-bottom: 3%;
+    transition: transform .3s ease-in-out
+}
+
+.TicketBack,.TicketFront {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 25%;
+    width: 10vh;
+    height: 15vh;
+    float: left;
+    object-fit: cover
+}
+
+.TicketFront {
+    left: 15%;
+    position: relative;
+    transform: rotate(25deg);
+    z-index: 1
+}
+
+.TicketBack {
+    left: 25%;
+    position: absolute;
+    transform: rotate(30deg)
+}
+
+.TicketFront:hover,.TicketFront:hover~.TicketBack {
+    animation: myAnim 2s ease infinite forwards;
+    animation-play-state: running
+}
+
+.ShopView .Vinyl {
+    position: absolute;
+    z-index: 3
+}
+
+.ShopView {
+    top: 5%;
+    margin-top: 7%;
+    height: 85vh;
+    opacity: 0
+}

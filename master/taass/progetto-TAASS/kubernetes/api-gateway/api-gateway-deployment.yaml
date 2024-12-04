@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway-service
+  
+  template:
+    metadata:
+      labels:
+        app: api-gateway-service
+    spec:
+      containers:
+        - name: api-gateway-service
+          image: aamshaegar/api-gateway-service:1.0.0
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 8080
+          env:
+            - name: EUREKA_SERVER
+              value: http://discovery-service-0.discovery-service-svc:8761/eureka/
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "500Mi"
+            limits:
+              memory: "800Mi"
+              cpu: "1000m"

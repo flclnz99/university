@@ -1,0 +1,14 @@
+.CartView{
+    display:none;
+    background-color: transparent;
+    width: 102%;
+    height: 100%;
+    position: absolute;
+    right: 0.1%;
+    opacity: 0;
+}
+.CartView img {
+    width: 100vh;
+    height: 94vh;
+    margin-left: 16%;
+}

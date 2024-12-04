@@ -1,4 +1,0 @@
-1) implementazione login, interfaccia grafica, la business logic c'è già;
-2) implementazione logout, sia interfaccia grafica che business logic;
-3) integrazione autenticazione google (e github);
-4) dockerizzation

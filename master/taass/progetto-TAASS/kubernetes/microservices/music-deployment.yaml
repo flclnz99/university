@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: music-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: music-service
+  
+  template:
+    metadata:
+      labels:
+        app: music-service
+    spec:
+      containers:
+        - name: music-service
+          image: aamshaegar/music-service:1.0.0
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 8092
+          env:
+            - name: EUREKA_SERVER
+              value: http://discovery-service-0.discovery-service-svc:8761/eureka/
+            
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:mysql://mysql-music-svc:3306/Taass_Db?createDatabaseIfNotExist=true"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "aclm"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "ricerca_Taass"
+            - name: SPRING_JPA_HIBERNATE_DDL-AUTO
+              value: "create-drop"
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "500Mi"
+            limits:
+              memory: "800Mi"
+              cpu: "1000m"

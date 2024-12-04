@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  namespace: mymusicspace
+  name: shop-service-deployment
+spec:
+  serviceName: shop-service
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shop-service
+  template:
+    metadata:
+      labels:
+        app: shop-service
+    spec:
+      containers:
+      - env:
+        - name: EUREKA_SERVER
+          value: http://discovery-service:8761/eureka/
+      - name: shop-service
+        image: shop-service
+        ports:
+        - containerPort: 8093
+          hostPort: 8093
+          protocol: TCP
+      restartPolicy: Always

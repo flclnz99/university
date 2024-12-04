@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat-service
+  
+  template:
+    metadata:
+      labels:
+        app: chat-service
+    spec:
+      containers:
+        - name: chat-service
+          image: aamshaegar/chat-service:1.0.0
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 8091
+          env:
+            - name: EUREKA_SERVER
+              value: http://discovery-service-0.discovery-service-svc:8761/eureka/
+            - name: SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE
+              value: "admin"
+            - name: SPRING_DATA_MONGODB_AUTO_INDEX_CREATION
+              value: "true"
+            - name: SPRING_DATA_MONGODB_HOST
+              value: "mongo-chat-svc"
+            - name: SPRING_DATA_MONGODB_PORT
+              value: "27017"
+            - name: SPRING_DATA_MONGODB_USERNAME
+              value: "rootuser"
+            - name: SPRING_DATA_MONGODB_PASSWORD
+              value: "rootpass"
+            - name: SPRING_DATA_MONGODB_DATABASE
+              value: "chatDB"
+            - name: SPRING_RABBITMQ_HOST
+              value: "rabbitmq"
+            - name: SPRING_RABBITMQ_PORT
+              value: "5672"
+            - name: SPRING_RABBITMQ_USERNAME
+              value: "guest"
+            - name: SPRING_RABBITMQ_PASSWORD
+              value: "guest"
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "500Mi"
+            limits:
+              memory: "800Mi"
+              cpu: "1000m"

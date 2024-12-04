@@ -1,0 +1,98 @@
+version: '3.7'
+
+services:
+
+  #######################################
+  # MYSQL DBMS
+  #######################################
+
+  mysqlDB:
+    image: mysql:8.0
+    container_name: mysqlDB
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: test_DB
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+
+    volumes:
+      - persistent:/var/lib/mysql
+
+    restart: always
+    networks:
+      - mynetwork
+
+
+    #######################################
+    # PHP MY ADMIN
+    #######################################
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - mysqlDB:mysqlDB
+    ports:
+      - "80:80"
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      PMA_HOST: mysqlDB
+    networks:
+      - mynetwork
+    depends_on:
+      - mysqlDB
+
+
+  #######################################
+  # Demo container
+  #######################################
+
+  chat:
+    container_name: chat
+    build:
+#      context: My Music Space/my-spikes
+      dockerfile: Dockerfile
+    image: chat:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - mynetwork
+    depends_on:
+      - mysqlDB
+    restart: always
+
+
+volumes:
+  persistent:
+
+networks:
+  mynetwork:
+    driver: bridge
+
+
+
+
+
+
+  # PER ACCEDERE A MYSQL DA PHPMYADMIN:
+
+  # SPIEGAZIONE
+  # per creare tutti i container e lanciare il progetto:
+  # prima creare una network nuova con "docker network create mynetwork"
+  # dopo lanciare il comando: sudo docker-compose -f docker-compose.yml up --force-recreate -V
+  # per stoppare tutto usare: docker-compose -f docker-compose.yml down
+
+
+# localhost:80
+# Username:   root
+# Password:   test
+
+
+# Se non si riescono a chiudere i container
+# sudo systemctl stop docker.socket
+# sudo systemctl stop docker
+# sudo systemctl restart docker

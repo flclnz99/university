@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo-shop
+  #namespace: mymusicspace
+
+  labels:
+    app: mongo-shop
+
+spec:
+  serviceName: mongo-shop-svc
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-shop
+  
+  template:
+    metadata:
+      labels:
+        app: mongo-shop
+    spec:
+      containers:
+      - name: mongo-shop
+        imagePullPolicy: IfNotPresent
+        image: mongo
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            value: rootuser
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            value: rootpass
+      
+        ports:
+          - containerPort: 27017
+        volumeMounts:
+            - mountPath: /data/db
+              name: mongo-shop-data
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "256Mi"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+      volumes:
+        - name: mongo-shop-data
+          persistentVolumeClaim:
+            claimName: "mongo-shop-pvc"

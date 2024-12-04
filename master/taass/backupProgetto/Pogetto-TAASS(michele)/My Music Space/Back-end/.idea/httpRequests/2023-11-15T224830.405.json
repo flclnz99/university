@@ -1,0 +1,6 @@
+{
+  "timestamp": "2023-11-15T21:48:30.192+00:00",
+  "status": 405,
+  "error": "Method Not Allowed",
+  "path": "/api/user/debug/list"
+}
