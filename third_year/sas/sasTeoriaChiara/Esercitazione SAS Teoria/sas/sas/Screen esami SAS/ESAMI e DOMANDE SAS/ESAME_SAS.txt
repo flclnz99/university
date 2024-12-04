@@ -1,0 +1,33 @@
+x = risposta corretta secondo Marco
+
+1) Quando si parla di regression testing? (3pt)
+  a) quando si effettuano test frequneti e non esaustivi e relativi alle funzionalità principali per decidere se il prodotto è sufficientemente stabile per essere testato da un test specializzato
+  b) quando si scrivono i test prima di aver implementato il codice
+x c) quando, a seguito di una correzione di un bug o dell'integrazione di un nuovo            componente, si vanno a ripetere i test già eseguiti per verificare che non siano state    introdotti nuovi bug
+  d) quando si testano i componenti o le unità in ordine inverso rispetto a quando sono realizzati
+
+2) Nel testing cosa si intende per stub (3pt)
+  a) una tecnica di black box testing nella quale si utilizza una versione fittizia dell'unità da testare per farle calcolare i risultati attesi e confrontarli con quelli effettivamente ottenuti
+  b) un approccio all'integration testig 
+  c) il codice che invoca i metodi di un dato modulo dell'unità per testarlo
+x d) una versione fittizia di un modulo/unità con la stessa interfaccia ma con comportamento predefinito, che consente il test in isolamento di altri moduli adesso dipendenti
+
+3) quale de seguenti NON è una delle tante forme di riuso dell'ingegneria del software    (3pt)
+  a) framework
+  b) design pattern
+x c) pattern matching
+  d) librerie
+
+4) quali dei seguenti ruoli non è previsto dal metodo SCRUM di gestione dei progetti Agili? (3pt)
+  a) Scrum Master
+  b) Project manager
+  c) Developer
+x d) Tester
+
+5) Tecniche di black box testing
+
+6) In cosa consiste la complessitˆ ciclomatica?
+
+7) fasi V-shaped
+
+NO 8) La differenza tra riuso COTS e sistemi applicativi integrati (Non dovremmo aver fatto questa roba quest'anno)

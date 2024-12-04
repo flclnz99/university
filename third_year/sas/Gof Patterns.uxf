@@ -1,0 +1,2864 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>3832</y>
+      <w>104</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>/State/
+{abstractClass}
+--
+#Context context
+--
++constructor(Context c){
+context = c
+}
+/+ stateDependentOperation()/
+/+changeState()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>524</x>
+      <y>3836</y>
+      <w>104</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>Context
+--
+-State state
+--
++constructor(){
+state = new DefaultConcreteState(this)
+}
++setState(State s){
+state = s;
+}
++stateDependentOperation(){
+state.stateDependentOperation();
+}
++changeState(){
+state.changeState();
+}
++nonStateDependentOperation(){
+.....
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>804</x>
+      <y>3832</y>
+      <w>120</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>è possibile anche che sia interfaccia, in quel 
+caso però non potrebbe avere costruttore il 
+quale quindi si dovrebbe riscrivere uguale in 
+tutte e tre le classi implementanti.
+Costrutture serve se State necessita di tenere
+un riferimento a Context, p.es. se le operazioni 
+stateDependent includono altre 
+operazioni di Context, non stateDependent.
+(ovvero una operazione solo parzialmente
+dipendendte dallo stato)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>804</x>
+      <y>3968</y>
+      <w>136</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>ConcreteState3
+--
+/.//eredita v.d.i./
+--
+/.//eredita costruttore o sovrascrive se/
+/.//deve aggiungervi qualcosa/
+
++stateDependentOperation(){
+/.//codice state dependent;/
+/.//eventualmtente:/
+context.nonStateDependentOperation();
+}
+
++changeState(){
+contex.setState(new DefaultConcreteState(context));
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>536</x>
+      <y>3968</y>
+      <w>124</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>DefaultConcreteState
+--
+/.//eredita v.d.i./
+--
+/.//eredita costruttore o sovrascrive se/
+/.//deve aggiungervi qualcosa/
+
++stateDependentOperation(){
+/.//codice state dependent;/
+/.//eventualmtente:/
+context.nonStateDependentOperation();
+}
+
++changeState(){
+contex.setState(new ConcreteState2(context));
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>3968</y>
+      <w>124</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>ConcreteState2
+--
+/.//eredita v.d.i./
+--
+/.//eredita costruttore o sovrascrive se/
+/.//deve aggiungervi qualcosa/
+
++stateDependentOperation(){
+/.//codice state dependent;/
+/.//eventualmtente:/
+context.nonStateDependentOperation();
+}
+
++changeState(){
+contex.setState(new ConcreteState3(context));
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>3888</y>
+      <w>100</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>724</x>
+      <y>3888</y>
+      <w>36</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>3888</y>
+      <w>124</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>3844</y>
+      <w>56</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+state    context
+</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>4196</y>
+      <w>44</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Strategy*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>3808</y>
+      <w>44</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*State*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>524</x>
+      <y>4216</y>
+      <w>108</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Context
+--
+Strategy strategy
+--
+/.//costruttore, metodi per gestire dati.../
+
++setStrategy(Strategy s){
+strategy = s;
+}
+
++strategyUsingOperation(){
+strategy.operation(data);
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>4216</y>
+      <w>104</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Strategy
+{interface}
+--
+/+ operation/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>4320</y>
+      <w>108</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>concreteStrategy1
+--
+Strategy strategy
+--
+/.//costruttore, ma se ha solo metodo che/
+/.//implementa algoritmo può bastare /
+/.//quello di default/
+
++operation(){
+/.//implementazione algoritmo/
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>4320</y>
+      <w>108</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>concreteStrategy2
+--
+Strategy strategy
+--
+/.//costruttore, ma se ha solo metodo che/
+/.//implementa algoritmo può bastare /
+/.//quello di default/
+
++operation(){
+/.//implementazione algoritmo/
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>4248</y>
+      <w>76</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>664</x>
+      <y>4248</y>
+      <w>72</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>628</x>
+      <y>4220</y>
+      <w>60</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+strategy
+</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>664</x>
+      <y>4440</y>
+      <w>92</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Visitor versione base*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>516</x>
+      <y>4588</y>
+      <w>120</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>ConcreteVisitor
+--
+
+--
++visit(typeDataStructure ds){
+   Iterator iterator = ds.iterator();
+   while(iterator.hasNext()){
+      Object o = iterator.next();
+      if(o instanceof Visitable){
+        ((Visitable)o).accept(this);
+        } else if (o instanceof typeDataStructure){
+        visit((typeDataStructure) o);
+      }
+   }
+}
+
++visit(typeA a){
+/.//codice adeguato al tipo a.../
+}
++visit(typeB b){
+/.//codice adeguato al tipo b.../
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>748</x>
+      <y>4508</y>
+      <w>92</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Visitable ("Element")
+{interface}
+--
+/+accept(Visitor v)/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>516</x>
+      <y>4512</y>
+      <w>120</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Visitor
+{interface}
+--
+/+visit(typeA a)/
+/+visit(typeB b)/
+/+visit(typeDataStructure ds)/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>684</x>
+      <y>4592</y>
+      <w>108</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>VisitableTypeA
+("ConcreteElementA")
+--
+
+--
+/.//costruttore/
++accept(Visitor v){
+v.visit(this);
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>4592</y>
+      <w>104</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>VisitableTypeB
+("ConcreteElementB")
+--
+
+--
+/.//costruttore/
++accept(Visitor v){
+v.visit(this);
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>4472</y>
+      <w>68</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>typeDataStructure 
+(supporta tipi eterogenei)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>4476</y>
+      <w>68</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>150.0;80.0;150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>4472</y>
+      <w>56</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>568</x>
+      <y>4472</y>
+      <w>60</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>Main</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>592</x>
+      <y>4480</y>
+      <w>12</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>4564</y>
+      <w>44</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>4536</y>
+      <w>60</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>4536</y>
+      <w>68</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>668</x>
+      <y>4672</y>
+      <w>260</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>difetti di questa versione di visitor:
+1)Se voglio aggiungere un nuovo ConcreteElement, devo modificare e ricompilare l'interfaccia Visitor
+2)I ConcreteElement devono implementare Visitable
+Soluzione: versione con Reflection</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>652</x>
+      <y>4524</y>
+      <w>84</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>le classi che implementano 
+visitable sono uguali, quindi
+Visitable potrebbe anche essere
+classe astratta con metodo
+accept già implementato e poi
+ereditato dalle sottoclassi,
+ma questo farebbe "sprecare"
+l'estensione</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>676</x>
+      <y>4756</y>
+      <w>92</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Visitor Reflection*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>772</x>
+      <y>4440</y>
+      <w>128</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>posso aggiungere metodi extra 
+all'implementazione dell'interfaccia, ma non posso 
+chiamarli da fuori senza prima fare downcast</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>4768</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>ReflectiveVisitor
+{interface}
+--
+/+visit(Object o)/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>4824</y>
+      <w>132</w>
+      <h>276</h>
+    </coordinates>
+    <panel_attributes>ConcreteReflectiveVisitor
+--
+
+--
+import java.lang.reflect.Method;
+import java.lang.reflect.invocationTargetException;
+
++visito(Collection collection){
+    Iterator iterator = collection.iterator();
+    while(iterator.hasNext()){
+        Object o = iterator.next();
+        visit(o);
+     }
+}
+
++visit(typeA a){
+/.//codice adeguato al tipo a.../
+}
++visit(typeB b){
+/.//codice adeguato al tipo b.../
+}
+
+defaultVisit(Object o){
+    if(o instanceof Collection){
+        visit((Collection) o);
+    } else {
+/              //comportamento di default/
+/              //per tipo non previsto/
+    }
+}
+
++visit(Object o){
+try {
+      Method m = getClass().getMethod("visit", new Class[] {o.getClass});
+      m.invoke(this, new Object[] {o});
+      }
+catch(NoSuchMethodException e){
+    defaultVisit(o);
+}
+catch(IllegalAccessException e){
+    defaultVisit(o);
+}
+catch(InvocationTargetException e){
+    defaultVisit(o);
+}
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>4804</y>
+      <w>44</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>720</x>
+      <y>4836</y>
+      <w>152</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>se viene invocato visit() su un tipo non previsto,
+scatta la NoSuchMethodException e viene usata
+la visita di default.
+Attenzione, Collection è una interfaccia quindi
+non arriverà mai un oggetto con tipo reale 
+Collection. Ma se ne arriva una sua implementazione,
+per esempio Vector, il ConcreteRelativeVisitor
+non potrà usare direttamente il metodo 
+visit(Collection c) perché sarebbe downcast.
+Per questo motivo userebbe il metodo visit(Object),
+il quale lancerebbe una NoSuchMethodException 
+per poi chiamare defaultVisit. A questo punto con
+l'opportuno upcast a Collection potrà essere usato
+visit(Collection c).</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>0</y>
+      <w>112</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*AbstractFactory*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>68</y>
+      <w>76</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>AbstractFactory
+{interface}
+--
+
+--
+/createAbstractProduct1();/
+/createAbstractProduct2();/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>68</y>
+      <w>60</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>AbstractProduct1
+{interface}
+--
+
+--
+/+operation();/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>144</y>
+      <w>124</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ConcreteFactoryA
+--
+ConcreteProduct1A
+ConcreteProduct2A
+--
+createAbstractProduct1() : ConcreteProduct1A
+createAbstractProduct2() : ConcreteProduct2A</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>708</x>
+      <y>164</y>
+      <w>88</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>ConcreteProduct1B
+--
+
+--
++operation(){
+/.//implementazione adatta a B/
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>544</x>
+      <y>144</y>
+      <w>120</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ConcreteFactoryB
+--
+ConcreteProduct1B
+ConcreteProduct2B
+--
+createAbstractProduct1(); ConcreteProduct1B
+createAbstractProduct2() : ConcreteProduct2B</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>164</y>
+      <w>88</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>ConcreteProduct1A
+--
+
+--
++operation(){
+/.//implementazione adatta a A/
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>228</y>
+      <w>80</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>AbstractProduct2
+{interface}
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>304</y>
+      <w>88</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>ConcreteProduct2B
+--
+
+--
++metodiVari(){
+/.//implementazione adatta a B/
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>812</x>
+      <y>304</y>
+      <w>88</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>ConcreteProduct2A
+--
+
+--
++metodiVari(){
+/.//implementazione adatta a B/
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>476</x>
+      <y>104</y>
+      <w>56</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>104</y>
+      <w>60</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>164</y>
+      <w>56</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>584</x>
+      <y>212</y>
+      <w>120</w>
+      <h>148</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>280.0;350.0;10.0;350.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>192</y>
+      <w>472</w>
+      <h>244</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>1070.0;10.0;1160.0;10.0;1160.0;590.0;10.0;590.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>496</x>
+      <y>212</y>
+      <w>432</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>1010.0;340.0;1060.0;340.0;1060.0;500.0;10.0;500.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>268</y>
+      <w>64</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>268</y>
+      <w>52</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>764</x>
+      <y>112</y>
+      <w>60</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>808</x>
+      <y>112</y>
+      <w>64</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>608</x>
+      <y>48</y>
+      <w>152</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Client
+--
+AbstractFactory  factory
+--
++selectFactory(AbstractFactory a){
+factory = a;
+}
+
++test(...){
+ AbstractProduct1 ap1 = factory.createAbstractProduct1();
+ AbstractProduct1 ap2 = factory.createAbstractProduct2();
+
+ ap1.operation();
+ ap2.metodiVati();
+ 
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>72</y>
+      <w>64</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>604</x>
+      <y>228</y>
+      <w>140</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>AbstractProduct2 è un'interfaccia marker, ovvero
+vuota. Non è una gran pratica di programmazione,
+la si può usare solo per dichiarare oggetti, non ci
+si potrà invocare sopra metodi fino a che non viene
+fatto un casting esplicito. Possiamo dedurre che 
+AbstractProduct2 è un componente i cui metodi
+sono chiamati solo da altri componenti. Se viene
+creato da una Factory, può essere sia di tipo A che
+di tipo B; quando verrà passato a un altro componente,
+esso deve incaricarsi di castarlo al tipo giusto.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>476</y>
+      <w>112</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Singleton versione statica*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>628</x>
+      <y>996</y>
+      <w>112</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Class Adapter*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>752</x>
+      <y>1032</y>
+      <w>104</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>Adaptee
+--
+
+--
++metodoAdaptee();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>692</x>
+      <y>1156</y>
+      <w>132</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Adapter
+--
+
+--
+/.//se il metodo di adaptee è in qualche/
+/.//modo utilizzabili, ma hanno firma non conforme:/
++metodPerIlClient(){
+super.metodoAdaptee();
+}
+
+/.//se sono utilizzabili in qualche modo:/
++metodpPerIlClient(){
+/.//codice extra/
+super.metodoAdaptee();
+/.//codice extra/
+}
+
+/.//se non sono utilizzabili ma hanno/
+/.//firma uguale sovrascrittura/
++metodoAdaptee();
+
+/.//se sono utilizzabili senza bisogno di modifiche:
+/.//nulla, sono ereditati!
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>492</x>
+      <y>1032</y>
+      <w>104</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Client
+--
+TargetInterface ti
+--
+.....ti = new ClasseCheNonNecessitaAdapter();
+ti.metodoPerIlClient();
+.....ti = new Adapter();
+ti.metodoPerIlClient();........</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>1032</y>
+      <w>104</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>TargetInterface
+{interface}
+--
+
+--
+/+meotdoPerIlClient();/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>1096</y>
+      <w>68</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>1096</y>
+      <w>52</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>592</x>
+      <y>1040</y>
+      <w>48</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+ti</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>1156</y>
+      <w>104</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>ClasseCheNonNecessitaAdapter
+--
+
+--
++metodoPerIlClient();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>1096</y>
+      <w>72</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>508</x>
+      <y>1412</y>
+      <w>104</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Client
+--
+TargetInterface ti
+--
+.....ti = new ClasseCheNonNecessitaAdapter();
+ti.metodoPerIlClient();
+.....ti = new Adapter();
+ti.metodoPerIlClient();........</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>1420</y>
+      <w>48</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+ti</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>1412</y>
+      <w>104</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>TargetInterface
+{interface}
+--
+
+--
+/+meotdoPerIlClient();/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>1532</y>
+      <w>132</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Adapter
+--
+Adaptee adaptee
+--
+/.//se il metodo di adaptee è in qualche/
+/.//modo utilizzabili/
++metodPerIlClient(){
+adaptee.metodoAdaptee();
+}
+
+/.//se sono utilizzabili in qualche modo:/
++metodpPerIlClient(){
+/.//codice extra/
+adaptee.metodoAdaptee();
+/.//codice extra/
+}
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>768</x>
+      <y>1412</y>
+      <w>104</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>Adaptee
+--
+
+--
++metodoAdaptee();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>1476</y>
+      <w>44</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>1368</y>
+      <w>112</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Object Adapter*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>1476</y>
+      <w>64</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+adaptee</panel_attributes>
+    <additional_attributes>90.0;10.0;90.0;280.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>484</x>
+      <y>1560</y>
+      <w>104</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>ClasseCheNonNecessitaAdapter
+--
+
+--
++metodoPerIlClient();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>1476</y>
+      <w>120</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>664</x>
+      <y>2456</y>
+      <w>112</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Decorator*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>2504</y>
+      <w>124</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Main
+--
+...Aggregate agg = new ConcreteComponent();
+
+agg.meth1();
+
+agg = new ConcreteDecorator1(agg);
+
+agg.meth1();...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>2624</y>
+      <w>96</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ConcreteComponent
+--
+
+--
++constructor()...
+
++meth1()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>2624</y>
+      <w>92</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Decorator
+{abstractClass}
+--
+Aggregate aggregate
+--
++constructor(Aggregate a){
+aggregate = a;
+}
+
++meth1(){
+aggregate.meth1();
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>688</x>
+      <y>2504</y>
+      <w>88</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Aggregate
+{interface}
+--
+
+--
+/+meth1()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>664</x>
+      <y>2732</y>
+      <w>96</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ConcreteDecorator1
+--
+
+--
+/.//costruttore ereditato/
+/.//metodi ereditati/
+/.//eventuali sovrascritture "decoranti":/
+
++meth1(){
+...added stuff...
+super.meth1();
+}
+/.//metodi aggiuntivi "decoranti"/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>2732</y>
+      <w>96</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ConcreteDecorator2
+--
+
+--
+/.//costruttore ereditato/
+/.//metodi ereditati/
+/.//eventuali sovrascritture "decoranti":/
+
++meth1(){
+...added stuff...
+super.meth1();
+}
+/.//metodi aggiuntivi "decoranti"/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>772</x>
+      <y>2520</y>
+      <w>104</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+aggregate</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0;180.0;310.0;150.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>668</x>
+      <y>2552</y>
+      <w>68</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>732</x>
+      <y>2552</y>
+      <w>60</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>2516</y>
+      <w>96</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>776</x>
+      <y>2692</y>
+      <w>64</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>2692</y>
+      <w>68</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>2524</y>
+      <w>40</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>fg=#128C86
+bg=#B8E0E0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>2528</y>
+      <w>112</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=#128C86
+bg=#B8E0E0</panel_attributes>
+    <additional_attributes>260.0;320.0;180.0;320.0;180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>2652</y>
+      <w>32</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>fg=#128C86
+bg=#B8E0E0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>2552</y>
+      <w>40</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>fg=#761C8C
+bg=#e7bfff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>2772</y>
+      <w>36</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>fg=#761C8C
+bg=#e7bfff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>2672</y>
+      <w>36</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>fg=#761C8C
+bg=#e7bfff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>2652</y>
+      <w>36</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>fg=#761C8C
+bg=#e7bfff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>2552</y>
+      <w>152</w>
+      <h>236</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=#9E1C8C</panel_attributes>
+    <additional_attributes>360.0;570.0;40.0;570.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>2676</y>
+      <w>40</w>
+      <h>124</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-()
+fg=#9E1C8C</panel_attributes>
+    <additional_attributes>80.0;10.0;80.0;290.0;10.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>664</x>
+      <y>2656</y>
+      <w>140</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-()
+fg=#9E1C8C</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;330.0;30.0;330.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>536</x>
+      <y>2664</y>
+      <w>80</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Le linee colorate
+mostrano come
+il b.d. e il 
+polimorfismo
+percorrono le classi,
+consentendo il funzionamento
+del pattern
+fg=#9E1C8C
+bg=#B8E0E0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>2884</y>
+      <w>112</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Synchronized Decorator*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>684</x>
+      <y>2928</y>
+      <w>72</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Aggregate
+{interface}
+--
+
+--
+/+method()/ 
+/.//should be synchronized/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>596</x>
+      <y>3068</y>
+      <w>96</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>UnsyncComponent
+--
+
+--
++method(){
+/.//does not synchronize/
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>2980</y>
+      <w>80</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>768</x>
+      <y>3056</y>
+      <w>96</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>SynchronizedDecorator
+--
+Aggregate aggregate
+--
+constructor(Aggregate a){
+aggregate = a;}
+
++method(){
+synchronize(aggregate){
+aggregate.method();
+}
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>2980</y>
+      <w>76</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>2920</y>
+      <w>104</w>
+      <h>124</h>
+    </coordinates>
+    <panel_attributes>Main
+--
+/.//senza decorator:/
+Aggregate a = new UnsyncComponent();
+/.//lo passo a 2 thread/
+t1.start();
+t2.start();
+while(t1 e t2 sono vivi){
+a.method();
+}
+
+--
+/.//con decorator:/
+a = new SynchronizedDecorator(a);
+/.//lo passo a 2 thread/
+t1.start();
+t2.start();
+while(t1 e t2 sono vivi){
+a.method();
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>2940</y>
+      <w>72</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>568</x>
+      <y>2916</y>
+      <w>192</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>Situazione iniziale. Voglio poter usare 
+il metodo di ConcreteComponent in modo
+sincronizzato senza modificare la classe
+bg=#A0A0E0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>508</y>
+      <w>104</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Singleton
+(static class)
+--
+/.//costruttore privato per evitare/
+/.//che vengano istanziati oggetti/
+
+/.//metodi necessari al client/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>700</x>
+      <y>508</y>
+      <w>100</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>difetti:
+1)Devo conoscere a tempo di compilazione
+tutte le informazioni necessarie a creare
+Singleton
+2)Non posso implementare interfacce</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>600</y>
+      <w>144</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Singleton creato da metodo statico*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>636</y>
+      <w>104</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Singleton
+--
+private static Singleton instance
+--
+/.//costruttore privato per evitare/
+/.//che vengano istanziati oggetti/
+
+public static Singleton getInstance(){
+    if(instance == null){
+        instance = new Singleton();
+    }
+  return instance;
+}
+
+/.//metodi per il client/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>704</x>
+      <y>636</y>
+      <w>136</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Problema: non supporta il multithreading. Esempio:
+-t1 chiama per la prima volta getInstnace()
+-subito dopo l'istruzione "
+che ci farà oltre al ramo if, t1 viene sospeso.
+-parte t2, che invoca getInstance
+-Singleton non è ancora stato creato, allora anche
+per t2 "if(instance == null)", sarà true e quindi
+creerà un nuovo singleton
+-t2 viene sospeso
+-t1 riprende e crea anche lui un nuovo singleton</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>628</x>
+      <y>752</y>
+      <w>144</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Singleton multithread*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>536</x>
+      <y>808</y>
+      <w>136</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Singleton
+--
+private static Singleton instance
+--
+/.//costruttore privato per evitare/
+/.//che vengano istanziati oggetti/
+
+public static synchronized Singleton getInstance(){
+    if(instance == null){
+        instance = new Singleton();
+    }
+  return instance;
+}
+
+/.//metodi per il client/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>700</x>
+      <y>772</y>
+      <w>136</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>Soluzione inefficiente poiché va acquisito 
+il lock a ogni invocazione di getInstance();
+La soluzione "double-checked lcoking" aggira
+il problema modificando il metodo statico in
+modo che si sincronizzi sull'oggetto Class:
+
+public static Singleton getInstance(){
+    if(instance == null){
+        synchronized(Singleton.class){
+            if(instance == null){
+                instance = new Singleton();
+            }
+        }
+    }
+  return instance;
+}
+
+Ma essa è scorretta perché non tiene conto dei
+criteri di ottimizzazione che possono far
+generare più di una istanza.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>652</x>
+      <y>1688</y>
+      <w>112</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Composite - metodi ereditati*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>508</x>
+      <y>1780</y>
+      <w>96</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Exception(classe di lib)
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>628</x>
+      <y>1728</y>
+      <w>120</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>Component
+{abstractClass}
+--
+Type someInstVar
+--
++constructur(arg somArg){
+}
+
+/.//abstract method:/
+/+doSomething()/
+
++add(Component c)throws LeafException{
+if(this instanceOf SinglePart)
+/.// lancia SinglePartException/
+}
+
++remove(Component c)throws LeafException{
+if(this instanceOf SinglePart)
+/.// lancia SinglePartException/
+}
++getChild(int n){ : Component
+return null;
+}
+
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>592</x>
+      <y>1928</y>
+      <w>96</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Leaf
+(oggetto singolo)
+--
+eredita someInstVar
+--
++constructor(arg someArg){
+    super(someArg);
+}
+
++doSomething(){
+/.//fa qualcosa sulla foglia, p.es:/
+sout(someInstVar);
+/.//(base della "ricorsione)"/
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>1832</y>
+      <w>128</w>
+      <h>188</h>
+    </coordinates>
+    <panel_attributes>Composite
+(oggetto composto)
+--
+eredita someIntVar
+Component children[]
+--
++constructor(arg someArg){
+    super(someArg);
+    children = new Vector();
+}
+
++doSomething(){
+sout(someInstVar);
+    for(i &lt; childrenLengt; i++){
+        Component c = (Component) children.get(i);
+        c.doSomething();
+    }
+}
+
++add(Component c) throws LeafException{
+children.add(c);
+}
+
++remove(Component c) throws LeafException{
+children.removeElement(c);
+}
+
++getChild(int n) { : Component
+return (Component) children.elementAt(n)
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>744</x>
+      <y>1764</y>
+      <w>164</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;
+children
+m1=*</panel_attributes>
+    <additional_attributes>10.0;20.0;390.0;20.0;390.0;220.0;350.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>2052</y>
+      <w>140</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Composite - metodi implementati*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>1880</y>
+      <w>56</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>508</x>
+      <y>1848</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>LeafException
+--
+constructor(){
+super("Not supported method");
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>1880</y>
+      <w>60</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>548</x>
+      <y>1804</y>
+      <w>36</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>2088</y>
+      <w>148</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Component
+{abstractClass}
+--
+Type someInstVar
+--
++constructur(arg somArg){
+}
+
+/+doSomething()/
+/+add (Component c) throws LeafException/
+/+remove (Compoonent c) throws LeafException/
+/+getChild(n) : Component/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>2192</y>
+      <w>120</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>Leaf
+(oggetto singolo)
+--
+eredita someInstVar
+--
++constructor(arg someArg){
+    super(someArg);
+}
+
++doSomething(){
+/.//fa qualcosa sulla foglia, p.es:/
+sout(someInstVar);
+/.//(base della "ricorsione)"/
+}
+
++add(Component c)throws LeafException{
+/.// lancia SinglePartException/
+}
+
++remove(Component c)throws LeafException{
+/.// lancia SinglePartException/
+}
++getChild(int n){ : Component
+return null;
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>2192</y>
+      <w>132</w>
+      <h>188</h>
+    </coordinates>
+    <panel_attributes>Composite
+(oggetto composto)
+--
+eredita someIntVar
+Component children[]
+--
++constructor(arg someArg){
+    super(someArg);
+    children = new Vector();
+}
+
++doSomething(){
+sout(someInstVar);
+    for(i &lt; childrenLengt; i++){
+        Component c = (Component) children.get(i);
+        c.doSomething();
+    }
+}
+
++add(Component c) throws LeafException{
+children.add(c);
+}
+
++remove(Component c) throws LeafException{
+children.removeElement(c);
+}
+
++getChild(int n) { : Component
+return (Component) children.elementAt(n)
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>632</x>
+      <y>2156</y>
+      <w>52</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>2156</y>
+      <w>76</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>2088</y>
+      <w>96</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Exception(classe di lib)
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>2156</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>LeafException
+--
+constructor(){
+super("Not supported method");
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>2112</y>
+      <w>36</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>476</x>
+      <y>1968</y>
+      <w>100</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>dal momento che Leaf e Composite
+hanno di fatto metodi diversi (Leaf)
+eredita quelli che non implementa,
+ma sono gli stessi che Compositte
+sovrascive) è anche accettabile
+usare una classe con soli metodi
+astratti</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>2012</y>
+      <w>84</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+fg=#3c7a00</panel_attributes>
+    <additional_attributes>190.0;120.0;10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>536</x>
+      <y>3292</y>
+      <w>116</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>ConcreteSubject
+--
+
+--
+/.//Metodi ereditati + altri metodi specializzati/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>548</x>
+      <y>3212</y>
+      <w>92</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Observable(classe di lib)
+--
+Observers [] observers;
+--
++addObserver(Observer o);
++removeObserver(Observer o);
++notifyObservers();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>3300</y>
+      <w>112</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ConcreteObserver2
+[import java.util.Observer
+import java.util.Observable]
+--
+#type someVdI
+--
++update(Observable subject, Object arg){
+/.//implementazione 2/
+}
+
+/.//possibili altri metodi/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>3212</y>
+      <w>128</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>/Observer(classe di lib)/
+{interface}
+--
+/update(Observable concreteSubject, Object arg)/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>3252</y>
+      <w>36</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+(extends)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>3244</y>
+      <w>68</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>712</x>
+      <y>3300</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ConcreteObserver1
+[import java.util.Observer
+import java.util.Observable]
+--
+#type someVdI
+--
++update(Observable subject, Object arg){
+/.//implementazione 1/
+}
+
+/.//possibili altri metodi/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>3244</y>
+      <w>64</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>636</x>
+      <y>3216</y>
+      <w>128</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+observers</panel_attributes>
+    <additional_attributes>300.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>692</x>
+      <y>3184</y>
+      <w>112</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Observer - Observable*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>3412</y>
+      <w>144</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Main
+--
+ConcreteSubject cs = new ConcreteSubject();
+ConcreteObserver1 co1 = new ConcreteObservver1();
+ConcreteObserver2 co2 = new ConcreteObservver2();
+s.addObserver(c01);
+s.addObserver(c02);
+/.//...modifica cs.../</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>3328</y>
+      <w>68</w>
+      <h>124</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>150.0;290.0;10.0;290.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>788</x>
+      <y>3368</y>
+      <w>104</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>240.0;10.0;240.0;120.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>3368</y>
+      <w>12</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>512</x>
+      <y>3576</y>
+      <w>116</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>EventSender
+--
+EventReceiver [] receivers;
+--
++notifyEventA();
++notifyEventB();
++notifyEventC();
+/.//altri metodi/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>3652</y>
+      <w>112</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ConcreteReceiver2
+--
+#type someVdI
+--
++updateA(){
+/.//implementazione 2/
+}
++updateB(){
+/.//implementazione 2/
+}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>732</x>
+      <y>3564</y>
+      <w>128</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>/EventReceiver(classe di lib)/
+{interface}
+--
+/updateA()/
+/updateB()/
+/updateC()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>740</x>
+      <y>3620</y>
+      <w>56</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>688</x>
+      <y>3652</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ConcreteReceiver1
+--
+#type someVdI
+--
++updateA(){
+/.//implementazione 1/
+}
++updateB(){
+/.//implementazione 1/
+}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>808</x>
+      <y>3620</y>
+      <w>52</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+(implements)</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>3580</y>
+      <w>116</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+receivers</panel_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>668</x>
+      <y>3528</y>
+      <w>112</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Observer - Observable*
+*Variante Event Receiver*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>584</x>
+      <y>3640</y>
+      <w>76</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Se servono più classi 
+che mandano eventi uguali
+o simili, e strutturate in
+modo simile, allora si 
+potrà specializzare
+EventSender</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>884</x>
+      <y>3572</y>
+      <w>68</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>non facciamo assunzioni
+sui parametri passati ai
+receivers</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>2560</y>
+      <w>76</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>ConcreteReceiver2
+--
+#type someVdI
+--
++update(Observable subject, Object arg){
+/.//implementazione 2/
+}
+
+/.//possibili altri metodi/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>820</x>
+      <y>3524</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>EventSender è un Subject più complesso
+che ha cambiamenti più specifici e 
+variegati.
+EventReceiver è una interfaccia che
+raccoglie tutte le possibili update</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>516</x>
+      <y>3532</y>
+      <w>100</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Altro vantaggio: se ho solo un
+tipo di EventSender, mi risparmio
+una estensione</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
