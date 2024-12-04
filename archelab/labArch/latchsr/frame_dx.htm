@@ -1,0 +1,315 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Latch SR Simulator</title>
+<meta name="Microsoft Theme" content="new-pastello 110">
+</head>
+
+<body background bgcolor="#6699CC" text="#CCFFFF" link="#FFCC99" vlink="#99CCCC" alink="#66FF99">
+
+<!--mstheme--><font face="Verdana, Arial, Helvetica">
+
+<p><font color="#800000"><b><i>
+<a name="Latch SR">Latch SR</a></i></b></font></p>
+<p><b><font size="2">I Latch Sr sono utili per creare una rete sequenziale 
+asincrona, cioè una rete capace di conservare un bit in memoria. Per creare una memoria da 1 bit, si 
+deve disporre di un circuito che &quot;<font color="#FFFF99">ricordi</font> &quot; i valori degli input precedenti.</font></b></p>
+<p><b><font size="2">Un tale circuito può essere costruito con due porte </font><font color="#000000" size="2">
+<font color="#FFFF99">NOR</font></a></font><font size="2"> come illustrato nella figura qui sotto 
+riportata, oppure con due porte </font><font color="#000000" size="2">
+<font color="#FFFF99">NAND</font></a></font><font size="2">.</font></b></p>
+<div align="left">
+  <b><font size="2">Il circuito in figura è chiamato <font color="#FFFF99">LATCH&nbsp;SR</font><font color="#0000ff"> </font>
+  realizzato con porte NOR.</font></b></div>
+<div align="left">
+  &nbsp;</div>
+<div align="left">
+  <!--mstheme--></font>
+  <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-width: 0" width="100%" id="AutoNumber2" height="118" bordercolorlight="#99CCFF" bordercolordark="#000033">
+    <tr>
+      <td width="41%" style="border-style: none; border-width: medium" height="116">
+      <!--mstheme--><font face="Verdana, Arial, Helvetica">
+      <p align="center">
+  <font size="2">
+  <img hspace="5" src="img/latchsr.gif" align="center" vspace="5" border="1" width="175" height="171"></font><!--mstheme--></font></td>
+      <td width="59%" style="border-style: none; border-width: medium" height="116">
+      <!--mstheme--><font face="Verdana, Arial, Helvetica">
+      <b><font size="2">E' dotato di due linee di input:</font></b><!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42">
+          <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica"><b>
+    <font size="2"><font color="#ff0000">S</font>&nbsp; (set) per 
+  l'attivazione del latch;</font></b><font size="2"> </font><!--mstheme--></font>
+          <!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42">
+          <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica"><b>
+    <font size="2"><font color="#0000ff">R</font>&nbsp; (reset) per il 
+  ripristino</font></b><font size="2"> </font><!--mstheme--></font>
+          <!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--></table>
+      <!--mstheme--><font face="Verdana, Arial, Helvetica">
+<p><b><font size="2">e di due in output :</font></b></p>
+      <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42">
+          <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica"><b>
+    <font size="2"><font color="#000000">Q</font>&nbsp; uscita</font></b><font size="2"> </font>
+          <!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42">
+          <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica"><b>
+    <font size="2" color="#ff00ff">Q'</font><font size="2">&nbsp; uscita negata</font></b><font size="2">
+    </font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--></table>
+      <!--mstheme--><font face="Verdana, Arial, Helvetica">
+<p><b><font size="2">che sono complementari.</font></b></p>
+      <!--mstheme--></font>
+      </td>
+    </tr>
+  </table>
+  <!--mstheme--><font face="Verdana, Arial, Helvetica">
+  </div>
+<div align="center">
+  &nbsp;</div>
+<div align="left">
+  <b><font size="2">Vediamo il comportamento di tale circuito attraverso la sua tabella di 
+verità: </font> </b></div>
+<div align="center">
+  &nbsp;</div>
+<!--mstheme--></font>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-width: 0" width="100%" id="AutoNumber1" height="32" bordercolorlight="#99CCFF" bordercolordark="#000033">
+  <tr>
+    <td width="36%" height="32" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top: medium none #99CCFF; border-bottom: medium none #000033">
+    <!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <p align="center">
+    <img border="0" src="img/tabella.gif" width="177" height="113"><!--mstheme--></font></td>
+    <td width="64%" height="32" style="border-style: none; border-width: medium">
+    <!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <p align="left">
+<b><font size="2">Dalla tabella di verità , notiamo che se <font color="#ff0000">
+    S</font>=<font color="#0000ff">R</font>=<font color="#FFFFFF">0</font>, il valore di
+    <font color="#000000">Q</font> rimane inalterato, cioè ci si trova in uno 
+    stato di memoria. Questa considerazione non vale se i valori precedenti di S 
+    ed R erano <font color="#FF0000">S</font>=<font color="#0000FF">R</font>=<font color="#0000FF">1</font>&nbsp; 
+    (parleremo più avanti di questa configurazione).</font></b><p align="left">
+&nbsp;<!--mstheme--></font></td>
+  </tr>
+</table>
+<!--mstheme--><font face="Verdana, Arial, Helvetica">
+<p align="center"> &nbsp;</p>
+<!--mstheme--></font>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-left-width:0" width="100%" id="AutoNumber3" height="238" bordercolorlight="#99CCFF" bordercolordark="#000033">
+  <tr>
+    <td width="49%" height="238" style="border-right-style:solid; border-right-width:1" align="center">
+    <!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <p align="center">
+  <b><font size="2">Impostando <font color="#ff0000">S</font>=<font color="#0000FF">1 </font>
+ed<font color="#000000">
+</font><font color="#0000ff">R</font>=<font color="#FFFFFF">0</font>,<font color="#FFFFFF">
+</font>si dice che il latch 
+viene &quot;<font color="#FFFF99">Settato</font>&quot; a <font color="#0000FF">1 </font>&nbsp;(cioè <font color="#000000">Q</font>=<font color="#0000FF">1</font>)</font></b><font size="2"><b>.</b></font></p>
+    <p align="center">
+  <font size="2">
+  <img height="171" hspace="5" src="img/latch1010.gif" width="175" align="center" vspace="5" border="1"></font></p>
+    <!--mstheme--></font>
+    </td>
+    <td width="51%" height="238" style="border-right-style: solid; border-right-width: 1; border-top: 1px solid #99CCFF; border-bottom: 1px solid #000033; " align="center">
+    <!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <p align="center">
+  &nbsp;</p>
+    <p align="center">
+  <font size="2"><b>I</b></font><b><font size="2">mpostando <font color="#ff0000">
+  S</font>=<font color="#FFFFFF">0</font> ed<font color="#000000">
+</font><font color="#0000ff">R</font>=<font color="#0000FF">1</font>, si dice 
+  che il latch viene &quot;<font color="#FFFF99">Resettato</font>&quot; a <font color="#FFFFFF">
+  0 </font>
+  (cioè <font color="#000000">Q</font>=<font color="#FFFFFF">0</font>).</font></b></p>
+    <p align="center">
+  <font size="2">
+  <img height="171" hspace="5" src="img/latch0101.gif" width="175" align="center" vspace="5" border="1"></font></p>
+    <p>
+  &nbsp;</p>
+    <!--mstheme--></font>
+    </td>
+  </tr>
+</table>
+<!--mstheme--><font face="Verdana, Arial, Helvetica">
+<p><b>Configurazione <font color="#ff0000">S</font>= <font color="#0000ff">R</font>=<font color="#0000FF">1</font></b></p>
+<p><b><font size="2">La configurazione di <font color="#ff0000">S</font>= <font color="#0000ff">R</font>=<font color="#0000FF">1</font>, 
+oltre a violare la proprietà di complementarietà di Q e Q', può portare ad una 
+configurazione instabile. Se&nbsp; impostiamo Simultaneamente in Input 
+<font color="#FF0000">S</font>=<font color="#0000FF">R</font>=<font color="#FFFFFF">0</font> 
+si possono presentare i seguenti casi:</font></b></p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <b><font size="2">Il Latch si stabilizza con <font color="#000000">Q</font>=<font color="#0000FF">1</font> 
+    e <font color="#FF00FF">Q'</font>=<font color="#FFFFFF">0</font> </font></b>
+    <!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <b><font size="2">Il Latch si stabilizza con <font color="#000000">Q</font>=<font color="#FFFFFF">0</font> 
+    e <font color="#FF00FF">Q'</font>=<font color="#0000FF">1</font></font></b><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica"><font size="2">
+    <b>Il Latch non si stabilizza e continua ad oscillare all'infinito con i 
+    valori di <font color="#000000">&nbsp;&nbsp;&nbsp; Q</font>=<font color="#FF00FF">Q'
+    </font>che si alternano a <font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Q</font>=<font color="#FF00FF">Q'</font>=<font color="#0000FF">1&nbsp;
+    </font><font color="#FFFFFF">&nbsp;&nbsp; e&nbsp;&nbsp;&nbsp; </font>
+    <font color="#000000">Q</font>=<font color="#FF00FF">Q'</font>=<font color="#FFFFFF">.</font></b></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--></table>
+<!--mstheme--><font face="Verdana, Arial, Helvetica">
+<p><b><font size="2">L'oscillazione del Latch SR può avvenire quando i valori di 
+S ed R passano simultaneamente da</font><font size="2" color="#FFFFFF"> </font>
+<font size="2" color="#FF0000">S</font><font size="2">=</font><font size="2" color="#0000FF">R</font><font size="2">=</font><font size="2" color="#0000FF">1</font><font size="2" color="#FFFFFF">
+</font><font size="2">ad</font><font size="2" color="#FFFFFF">&nbsp; </font>
+<font size="2" color="#FF0000">S</font><font size="2">=</font><font size="2" color="#0000FF">R</font><font size="2">=</font><font size="2" color="#FFFFFF">0 
+i</font><font size="2">noltre la velocità&nbsp; delle porte NOR sono 
+perfettamente equivalenti ed i fili del circuito hanno la stessa lunghezza (cioè 
+perfettamente simmetrici). Se viene a mancare una delle condizioni citate, il 
+circuito si stabilizza.</font></b></p>
+<!--mstheme--></font>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-width: 0" width="100%" id="AutoNumber5" bordercolorlight="#99CCFF" bordercolordark="#000033">
+  <tr>
+    <td width="51%" style="border-style: none; border-width: medium">
+    <!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <p align="center"><font size="2">
+  <img border="1" src="img/latch0011.gif" width="175" height="171"></font><!--mstheme--></font></td>
+    <td width="49%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top: medium none #99CCFF; border-bottom: medium none #000033">
+    <!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <p align="center"><font size="2">
+  <img border="1" src="img/latch0000.gif" width="175" height="171"></font><!--mstheme--></font></td>
+  </tr>
+</table>
+<!--mstheme--><font face="Verdana, Arial, Helvetica">
+<p>&nbsp;</p>
+<p><font size="2"><b>Il Simulatore fa vedere</b></font><b><font size="2" color="#FF0000"> </font>
+<font size="2">cambiando lo stato da</font><font size="2" color="#FF0000"> S</font><font size="2">=</font><font size="2" color="#0000FF">R</font><font size="2">=</font><font size="2" color="#0000FF">1 </font>
+<font size="2" color="#FFFFFF">a </font>
+<font size="2" color="#FF0000">S</font><font size="2">=</font><font size="2" color="#0000FF">R</font><font size="2">=</font><font size="2" color="#FFFFFF">0,</font><font size="2" color="#0000FF">
+</font></b><font size="2"><b>&nbsp;il caso in cui il Latch SR oscilla.</b></font></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><font color="#800000"><i><b>
+<a name="Download Simulatore">Download 
+Simulatore</a></b></i></font></p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <font size="2" color="#FFFFCC"><b><a target="_blank" href="latchsr.zip">
+    <font color="#0000FF">Programma Simulatore</font></a></b></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <font size="2" color="#FFFFCC"><b>
+    <a target="_blank" href="codice%20latchsr.zip"><font color="#0000FF">Codice 
+    Sorgente</font></a></b></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--></table>
+<!--mstheme--><font face="Verdana, Arial, Helvetica">
+<p><font size="2"><b>Istruzioni per l'installazione e 
+l'esecuzione del programma:</b></font></p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <font size="2"><b>Creare una cartella dove installare il 
+    programma (es.&nbsp; LatchSR)</b></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <b><font size="2">Cliccare sul Link &quot;Programma Simulatore&quot; (apre il file 
+    latchsr.zip)</font></b><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <font size="2"><b>scompattare i files all'interno della 
+    cartella creata (es. LatchSR)</b></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <b><font size="2">Aprire una shell (Linux) o prompt MSDOS (Windows) e 
+    posizionarsi nella directory nella quale è stato decompresso il file </font>
+    </b><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <b><font size="2">Eseguire il comando:&nbsp;&nbsp;&nbsp;&nbsp; java LatchSR
+    </font></b><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--></table>
+<!--mstheme--><font face="Verdana, Arial, Helvetica">
+<p>&nbsp;</p>
+<p><font size="2"><b>Il programma è stato realizzato con la 
+versione di java sdk 1.4.0</b></font></p>
+<p><font size="2"><b>E' stato testato con i seguenti Sistemi 
+Operativi:</b></font></p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <font size="2"><b>Windows XP</b></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <font size="2"><b>Windows 98</b></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42">
+    <img src="img/sumbul1a.gif" width="15" height="15" hspace="13" alt="punto elenco"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Verdana, Arial, Helvetica">
+    <font size="2"><b>Linux (Red Hat 9)</b></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--></table>
+<!--mstheme--><font face="Verdana, Arial, Helvetica">
+<p><font size="2"><b>con altri sistemi operativi non si 
+garantisce la funzionalità.</b></font></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<!--mstheme--></font>
+
+</body>
+
+</html>
