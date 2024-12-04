@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Esempio1</string>
+    <string name="mostra">Mostra var globale</string>
+</resources>

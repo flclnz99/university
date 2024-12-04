@@ -1,0 +1,2 @@
+rootProject.name = "lucchettoApp"
+include ':app'

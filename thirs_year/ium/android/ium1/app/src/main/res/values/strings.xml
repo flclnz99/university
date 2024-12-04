@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ium1</string>
+    <string name="button">button2</string>
+    <string name="risultato">risultato=%s</string>
+    <string name="operando1">operando1</string>
+    <string name="operando2">operando2</string>
+    <string name="operazione">*</string>
+    <string name="click">clicca</string>
+    <string name="button3">Button</string>
+</resources>

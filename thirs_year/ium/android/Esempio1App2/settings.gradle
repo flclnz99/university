@@ -1,0 +1,4 @@
+include ':libprova'
+rootProject.name='Esempio1App2'
+include ':app'
+include ':libsample'

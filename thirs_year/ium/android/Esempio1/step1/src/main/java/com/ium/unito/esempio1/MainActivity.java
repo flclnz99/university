@@ -1,0 +1,27 @@
+package com.ium.unito.esempio1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+
+import java.util.Date;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void azione(View v){
+        Log.d("MainActivity", "sono in azione");
+        TextView t = findViewById(R.id.text);
+        Date d = new Date();
+        t.setText(d.toString());
+    }
+
+}
