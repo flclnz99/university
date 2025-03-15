@@ -104,6 +104,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#armaUsataDa">
         <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#usaArma"/>
+        <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Arma"/>
+        <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Personaggio"/>
         <rdfs:comment xml:lang="it">Ogni arma è usata da un personaggio (protagonista o antagonista)</rdfs:comment>
         <rdfs:label xml:lang="it">armaUsataDa</rdfs:label>
     </owl:ObjectProperty>
@@ -114,8 +116,10 @@
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#classifica">
         <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haPEGI"/>
+        <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PEGI"/>
+        <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:comment xml:lang="it">Ogni categoria di PEGI classifica uno o più videogiochi</rdfs:comment>
-        <rdfs:seeAlso xml:lang="it">classifica</rdfs:seeAlso>
+        <rdfs:label xml:lang="it">classifica</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -247,6 +251,8 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#ospita -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#ospita">
+        <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Piattaforma"/>
+        <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:comment xml:lang="it">Ogni piattaforma ospita uno o più videogiochi</rdfs:comment>
         <rdfs:label xml:lang="it">ospita</rdfs:label>
     </owl:ObjectProperty>
@@ -260,6 +266,26 @@
         <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:comment xml:lang="it">Un personaggio appare in uno o più videogiochi</rdfs:comment>
         <rdfs:label xml:lang="it">presenteIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#pubblica -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#pubblica">
+        <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#pubblicaSu"/>
+        <rdfs:comment xml:lang="it">Una o più piattaforme pubblicano videogiochi prodotti da una software house</rdfs:comment>
+        <rdfs:label xml:lang="it">pubblica</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#pubblicaSu -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#pubblicaSu">
+        <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Produzione"/>
+        <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Piattaforma"/>
+        <rdfs:label xml:lang="it">Una casa produttrice pubblica su almeno una piattaforma</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -289,6 +315,8 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èAntagonistaIn -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èAntagonistaIn">
+        <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Antagonista"/>
+        <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:comment xml:lang="it">In un gioco esistono 0 o più antagonisti</rdfs:comment>
         <rdfs:label xml:lang="it">èAntagonistaIn</rdfs:label>
     </owl:ObjectProperty>
@@ -298,6 +326,8 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èDlcDi -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èDlcDi">
+        <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#DLC"/>
+        <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:comment xml:lang="it">Ogni DLC appartiene ad un gioco</rdfs:comment>
         <rdfs:label xml:lang="it">èDlcDi</rdfs:label>
     </owl:ObjectProperty>
@@ -306,13 +336,20 @@
 
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èEventoDi -->
 
-    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èEventoDi"/>
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èEventoDi">
+        <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Evento_di_Gioco"/>
+        <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
+        <rdfs:comment xml:lang="it">Ogni evento di gioco appartiene ad un videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">èEventoDi</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èGenereDi -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èGenereDi">
+        <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Genere"/>
+        <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:comment xml:lang="it">Ogni genere caratterizza uno o più giochi</rdfs:comment>
         <rdfs:label xml:lang="it">èGenereDi</rdfs:label>
     </owl:ObjectProperty>
@@ -322,6 +359,8 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èPublisherDi -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èPublisherDi">
+        <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Publisher"/>
+        <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:comment xml:lang="it">Un publisher pubblica uno o più videogiochi</rdfs:comment>
         <rdfs:label xml:lang="it">èPublisherDi</rdfs:label>
     </owl:ObjectProperty>
@@ -331,6 +370,8 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èSottogenereDi -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èSottogenereDi">
+        <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Genere"/>
+        <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Genere"/>
         <rdfs:comment xml:lang="it">Un genere può essere un sottogenere di un altro</rdfs:comment>
         <rdfs:label xml:lang="it">èSottogenereDi</rdfs:label>
     </owl:ObjectProperty>
@@ -694,8 +735,8 @@
 
     <owl:Class rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#vgo:Character">
         <rdfs:subClassOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Personaggio"/>
+        <rdfs:comment xml:lang="it">vgo:Character rappresenta un personaggio all&apos;interno dell&apos;ontologia VGO (Video Game Ontology).</rdfs:comment>
         <rdfs:label xml:lang="it">vgo:Character</rdfs:label>
-        <rdfs:label xml:lang="it">vgo:Character rappresenta un personaggio all&apos;interno dell&apos;ontologia VGO (Video Game Ontology).</rdfs:label>
     </owl:Class>
     
 
@@ -720,9 +761,9 @@
     
 
 
-    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Ascia_da_Guerra -->
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#AsciadaGuerra -->
 
-    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Ascia_da_Guerra">
+    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#AsciadaGuerra">
         <rdfs:comment xml:lang="it">Ascia da guerra utilizzata come arma in combattimento.</rdfs:comment>
         <rdfs:label xml:lang="it">AsciaDaGuerra</rdfs:label>
     </owl:NamedIndividual>
@@ -742,7 +783,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Azione -->
 
     <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Azione">
-        <videogame:haSottogenere rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Gioco_di_Ruolo"/>
+        <videogame:haSottogenere rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#GiocodiRuolo"/>
         <rdfs:comment xml:lang="it">Azione è un tipo di videogioco in cui l&apos;enfasi è posta su sfide fisiche, combattimenti e azioni rapide. I giochi di azione includono sequenze di gioco che richiedono riflessi rapidi, coordinazione e abilità nel superare ostacoli o nemici. Gli esempi classici sono i giochi di platform, sparatutto e giochi di combattimento.</rdfs:comment>
         <rdfs:label xml:lang="it">Azione</rdfs:label>
     </owl:NamedIndividual>
@@ -758,27 +799,37 @@
     
 
 
-    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Gioco_di_Ruolo -->
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#ElectronicArts -->
 
-    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Gioco_di_Ruolo">
+    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#ElectronicArts">
+        <videogame:pubblicaSu rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PS4"/>
+        <rdfs:comment xml:lang="it">È una delle più grandi e note case produttrici e distributrici di videogiochi al mondo.</rdfs:comment>
+        <rdfs:label xml:lang="it">ElectronicArts</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#GiocodiRuolo -->
+
+    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#GiocodiRuolo">
         <rdfs:comment xml:lang="it">Genere di videogiochi in cui i giocatori controllano uno o più personaggi, sviluppandone abilità e statistiche attraverso missioni, combattimenti e interazioni con il mondo di gioco.</rdfs:comment>
         <rdfs:label xml:lang="it">GiocoDiRuolo</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#God_Of_War_Ragnarok -->
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#GodOfWarRagnarok -->
 
-    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#God_Of_War_Ragnarok">
+    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#GodOfWarRagnarok">
         <videogame:contienePersonaggio rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Kratos"/>
-        <videogame:disponibileSu rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Intel_Core_i3-12100"/>
+        <videogame:disponibileSu rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#IntelCorei3-12100"/>
         <videogame:disponibileSu rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PS4"/>
         <videogame:haAntagonista rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Baldur"/>
         <videogame:haDLC rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Valhalla"/>
         <videogame:haGenere rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Azione"/>
         <videogame:haPEGI rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PEGI18"/>
         <videogame:haPublisher rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Sony"/>
-        <videogame:sviluppatoDa rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Santa_Monica_Studios"/>
+        <videogame:sviluppatoDa rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#SantaMonicaStudios"/>
         <videogame:haAnnoDiUscita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2019</videogame:haAnnoDiUscita>
         <videogame:numeroGiocatori rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</videogame:numeroGiocatori>
         <rdfs:comment xml:lang="it">God of War è un videogioco di azione-avventura, noto per la sua narrativa coinvolgente e il combattimento dinamico. Il gioco segue le avventure di Kratos, un ex dio greco, e suo figlio Atreus, mentre affrontano sfide mitologiche in un mondo ispirato alla mitologia norrena. God Of War Ragnarok è l&apos;ultimo capitolo della saga principale</rdfs:comment>
@@ -787,9 +838,9 @@
     
 
 
-    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Intel_Core_i3-12100 -->
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#IntelCorei3-12100 -->
 
-    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Intel_Core_i3-12100">
+    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#IntelCorei3-12100">
         <videogame:versionePC>Intel Core i3-12100</videogame:versionePC>
         <rdfs:comment xml:lang="it">Intel Core i3-12100: PC basato su processore Intel Core i3-12100, appartenente alla dodicesima generazione di CPU Intel. Ideale per gaming entry-level e attività generali, compatibile con sistemi Windows e Linux.</rdfs:comment>
         <rdfs:label xml:lang="it">IntelCorei3-12100</rdfs:label>
@@ -800,7 +851,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Kratos -->
 
     <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Kratos">
-        <videogame:usaArma rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Ascia_da_Guerra"/>
+        <videogame:usaArma rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#AsciadaGuerra"/>
         <rdfs:comment xml:lang="it">Kratos è il protagonista della serie di videogiochi *God of War*. Ex dio della guerra nella mitologia greca, è caratterizzato da un temperamento impulsivo e una forza straordinaria. Nel corso della serie, Kratos affronta numerosi nemici e divinità, lottando con il suo passato tormentato mentre cerca di proteggere suo figlio, Atreus, e affrontare nuove sfide mitologiche.</rdfs:comment>
         <rdfs:label xml:lang="it">Kratos</rdfs:label>
     </owl:NamedIndividual>
@@ -810,7 +861,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Midgard -->
 
     <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Midgard">
-        <list:firstItemOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#God_Of_War_Ragnarok"/>
+        <list:firstItemOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#GodOfWarRagnarok"/>
         <videogame:tipoEvento>Livello</videogame:tipoEvento>
         <rdfs:comment xml:lang="it">Livello iniziale del videogioco God of War: Ragnarok</rdfs:comment>
         <rdfs:label xml:lang="it">Midgard</rdfs:label>
@@ -831,7 +882,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Odino -->
 
     <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Odino">
-        <list:lastItemOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#God_Of_War_Ragnarok"/>
+        <list:lastItemOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#GodOfWarRagnarok"/>
         <sequence:follows rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Midgard"/>
         <videogame:tipoEvento>Boss</videogame:tipoEvento>
         <rdfs:comment xml:lang="it">Odino, padre degli dei norreni, è il boss finale con cui Kratos, protagonista del videogioco God of War: Ragnarok, si scontra.</rdfs:comment>
@@ -905,13 +956,13 @@
     
 
 
-    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Pokemon_Scarlatto -->
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PokemonScarlatto -->
 
-    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Pokemon_Scarlatto">
+    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PokemonScarlatto">
         <videogame:contienePersonaggio rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Ash"/>
         <videogame:disponibileSu rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Nintendo_Switch"/>
         <videogame:haDLC rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#TesoroAreaZero"/>
-        <videogame:haGenere rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Gioco_di_Ruolo"/>
+        <videogame:haGenere rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#GiocodiRuolo"/>
         <videogame:haPEGI rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PEGI3"/>
         <rdfs:comment xml:lang="it">Videogioco di ruolo sviluppato da Game Freak e pubblicato da Nintendo e The Pokémon Company. Appartiene al franchise Pokémon ed è esclusivo per Nintendo Switch.</rdfs:comment>
         <rdfs:label xml:lang="it">PokemonScarlatto</rdfs:label>
@@ -919,9 +970,9 @@
     
 
 
-    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Santa_Monica_Studios -->
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#SantaMonicaStudios -->
 
-    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Santa_Monica_Studios">
+    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#SantaMonicaStudios">
         <rdfs:comment xml:lang="it">Sviluppatore di videogiochi statunitense, parte dei PlayStation Studios di Sony. È noto principalmente per la serie God of War, caratterizzata da una forte componente narrativa e un gameplay d&apos;azione.</rdfs:comment>
         <rdfs:label xml:lang="it">SantaMonicaStudio</rdfs:label>
     </owl:NamedIndividual>
@@ -955,9 +1006,9 @@
     
 
 
-    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#XBOX_ONE -->
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#XboxOne -->
 
-    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#XBOX_ONE">
+    <owl:NamedIndividual rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#XboxOne">
         <videogame:versioneXBOX>ONE</videogame:versioneXBOX>
         <rdfs:comment xml:lang="it">Console prodotta da Microsoft, appartenente all’ottava generazione di console. Supporta giochi in formato digitale e fisico ed è parte dell’ecosistema Xbox.</rdfs:comment>
         <rdfs:label xml:lang="it">XBOXONE</rdfs:label>
