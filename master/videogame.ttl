@@ -1,0 +1,588 @@
+@prefix : <http://www.videogame.com/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix www: <http://www.videogame.com#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix list: <http://www.ontologydesignpatterns.org/cp/owl/list.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#vann:> .
+@prefix sequence: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix videogame: <http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@base <http://www.videogame.com/> .
+
+<http://www.videogame.org/lorenzo/ontologies/2024/1/videogame> rdf:type owl:Ontology ;
+                                                                owl:imports <http://www.ontologydesignpatterns.org/cp/owl/list.owl> ;
+                                                                dc:creator "Lorenzo"@it ;
+                                                                dc:date "27-2-2025"@it ;
+                                                                dc:description "Un'ontologia per rappresentare concetti, relazioni e proprietà legati ai videogiochi, incluse piattaforme, generi, personaggi ed elementi di gioco."@it ;
+                                                                dc:title "Ontologia dei Videogiochi"@it ;
+                                                                vann:preferredNamespacePrefix "vg"@it ;
+                                                                vann:preferredNamespaceUri "http://www.videogame.org/lorenzo/ontologies/2024/1/videogame"@it ;
+                                                                rdfs:label "Videogame Ontology"@it .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#vann:preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#vann:preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#contienePersonaggio
+videogame:contienePersonaggio rdf:type owl:ObjectProperty ;
+                              owl:inverseOf videogame:presenteIn ;
+                              rdfs:domain videogame:Videogioco ;
+                              rdfs:range videogame:Personaggio ;
+                              rdfs:comment "Ogni videogioco contiene almeno un persoaggio, sia esso un protagonista o un antagonista"@it ;
+                              rdfs:label "contienePersonaggio"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#disponibileSu
+videogame:disponibileSu rdf:type owl:ObjectProperty ;
+                        rdfs:domain videogame:Videogioco ;
+                        rdfs:range videogame:Piattaforma ;
+                        rdfs:comment "Il videogioco è disponibile su una piattaforma"@it ;
+                        rdfs:label "disponibileSu"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haAntagonista
+videogame:haAntagonista rdf:type owl:ObjectProperty ;
+                        rdfs:domain videogame:Videogioco ;
+                        rdfs:range videogame:Antagonista ;
+                        rdfs:comment "Riferimento alla relazione in cui un videogioco presenta uno o più antagonisti, ovvero i personaggi o forze che si oppongono al protagonista del gioco. L'antagonista è spesso la figura centrale con cui il giocatore deve confrontarsi nel corso della trama, creando conflitto e motivazione per l'avanzamento del gioco."@it ;
+                        rdfs:label "haAntagonista"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haDLC
+videogame:haDLC rdf:type owl:ObjectProperty ;
+                rdfs:domain videogame:Videogioco ;
+                rdfs:range videogame:DLC ;
+                rdfs:comment "Un videogioco può avere un DLC, ovvero una parte aggiuntiva, rilasciata in seguito all'uscita del gioco stesso." ;
+                rdfs:label "haDLC"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haEvento
+videogame:haEvento rdf:type owl:ObjectProperty ;
+                   rdfs:domain videogame:Videogioco ;
+                   rdfs:range videogame:Evento_di_Gioco ;
+                   rdfs:comment "Ogni videogioco ha almeno un'evento di gioco"@it ;
+                   rdfs:label "haEvento"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haGenere
+videogame:haGenere rdf:type owl:ObjectProperty ;
+                   rdfs:domain videogame:Videogioco ;
+                   rdfs:range videogame:Genere ;
+                   owl:propertyChainAxiom ( videogame:haGenere
+                                            videogame:haSottogenere
+                                          ) ;
+                   rdfs:comment "Ogni videogioco è associato ad almeno un Genere"@it ;
+                   rdfs:label "haGenere"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haPEGI
+videogame:haPEGI rdf:type owl:ObjectProperty ;
+                 rdfs:domain videogame:Videogioco ;
+                 rdfs:range videogame:PEGI ;
+                 rdfs:comment "Ogni videogioco è associato ad un solo PEGI"@it ;
+                 rdfs:label "PEGI"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haPublisher
+videogame:haPublisher rdf:type owl:ObjectProperty ;
+                      rdfs:domain videogame:Videogioco ;
+                      rdfs:range videogame:Publisher ;
+                      rdfs:comment "Un videogioco è associato ad un publisher"@it ;
+                      rdfs:label "haPublisher"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haSottogenere
+videogame:haSottogenere rdf:type owl:ObjectProperty ,
+                                 owl:TransitiveProperty ;
+                        rdfs:domain videogame:Genere ;
+                        rdfs:range videogame:Genere ;
+                        rdfs:comment "Un genere è associato ad un suo sottogenere"@it ;
+                        rdfs:label "haGenere"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haSviluppato
+videogame:haSviluppato rdf:type owl:ObjectProperty ;
+                       owl:inverseOf videogame:sviluppatoDa ;
+                       rdfs:domain videogame:Sviluppatore ;
+                       rdfs:range videogame:Videogioco ;
+                       rdfs:comment "Uno sviluppatore sviluppa un videogioco"@it ;
+                       rdfs:label "haSviluppato"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#presenteIn
+videogame:presenteIn rdf:type owl:ObjectProperty ;
+                     rdfs:domain videogame:Personaggio ;
+                     rdfs:range videogame:Videogioco ;
+                     rdfs:comment "Un personaggio appare in uno o più videogiochi"@it ;
+                     rdfs:label "presenteIn"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#sviluppatoDa
+videogame:sviluppatoDa rdf:type owl:ObjectProperty ;
+                       rdfs:domain videogame:Videogioco ;
+                       rdfs:range videogame:Sviluppatore ;
+                       rdfs:comment "Un videogioco è sviluppato da almeno uno sviluppatore"@it ;
+                       rdfs:label "sviluppatoDa"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#usaArma
+videogame:usaArma rdf:type owl:ObjectProperty ;
+                  rdfs:domain videogame:Personaggio ;
+                  rdfs:range videogame:Arma ;
+                  rdfs:comment "Un personaggio usa un'arma"@it ;
+                  rdfs:label "usaArma"@it .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haAnnoDiUscita
+videogame:haAnnoDiUscita rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain videogame:Videogioco ;
+                         rdfs:range xsd:decimal ;
+                         rdfs:comment "Anno di uscita di un Videogioco"@it ;
+                         rdfs:label "haAnnoDiUscita"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#numeroGiocatori
+videogame:numeroGiocatori rdf:type owl:DatatypeProperty ;
+                          rdfs:domain videogame:Videogioco ;
+                          rdfs:range xsd:int ;
+                          rdfs:comment "Numero di giocatori supportati da un gioco"@it ;
+                          rdfs:label "numeroGiocatori"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#tipoEvento
+videogame:tipoEvento rdf:type owl:DatatypeProperty ;
+                     rdfs:domain videogame:Evento_di_Gioco ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Riferimento a un particolare tipo di evento che si verifica all'interno di un videogioco, come livelli o boss fight. Questi eventi rappresentano sfide o traguardi significativi per il giocatore e possono influenzare la progressione della trama o del gameplay, offrendo ricompense o sbloccando nuove aree."@it ;
+                     rdfs:label "tipoEvento"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#versioneNintendo
+videogame:versioneNintendo rdf:type owl:DatatypeProperty ;
+                           rdfs:domain videogame:Nintendo ;
+                           rdfs:range xsd:string .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#versionePC
+videogame:versionePC rdf:type owl:DatatypeProperty ;
+                     rdfs:domain videogame:PC ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Riferimento alla tipologia di computer su cui un videogioco è progettato per funzionare, come ad esempio un PC da gaming, un PC portatile, o un PC da lavoro. Ogni tipo di PC può avere requisiti hardware diversi, come processori più potenti, schede grafiche avanzate, o memorie RAM elevate, per garantire un'esperienza di gioco ottimale."@it ;
+                     rdfs:label "versionePC"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#versionePS
+videogame:versionePS rdf:type owl:DatatypeProperty ;
+                     rdfs:domain videogame:PS ;
+                     rdfs:range xsd:int ;
+                     rdfs:comment "Riferimento a una specifica console PlayStation, come PlayStation 4 o PlayStation 5. Indica la piattaforma su cui un videogioco è disponibile o ottimizzato, offrendo miglioramenti nelle prestazioni, grafica e funzionalità specifiche per l'hardware della console PlayStation."@it ;
+                     rdfs:label "versionePS"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#versioneXBOX
+videogame:versioneXBOX rdf:type owl:DatatypeProperty ;
+                       rdfs:domain videogame:XBOX ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Riferimento a una specifica console Xbox, come Xbox One o Xbox Series X/S. Indica la piattaforma su cui un videogioco è disponibile o ottimizzato per offrire una migliore esperienza di gioco, in termini di grafica, prestazioni e funzionalità."@it ;
+                       rdfs:label "versioneXBOX"@it .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/net/VideoGameOntology#vgo:Game
+<http://purl.org/net/VideoGameOntology#vgo:Game> rdf:type owl:Class ;
+                                                 owl:equivalentClass videogame:Videogioco .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem
+list:ListItem rdfs:comment "Insieme delle parti fondamentali di un videogioco. Contiene: DLC, genere, oggetto, arma"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Antagonista
+videogame:Antagonista rdf:type owl:Class ;
+                      rdfs:subClassOf videogame:Personaggio ;
+                      rdfs:comment "Antagonista rappresenta il personaggio opposto al protagonista, spesso incaricato di ostacolare la sua missione o obiettivi, contribuendo al conflitto narrativo del videogioco."@it ;
+                      rdfs:label "Antagonista"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Arma
+videogame:Arma rdf:type owl:Class ;
+               rdfs:subClassOf videogame:Oggetto ;
+               rdfs:comment "Arma rappresenta un tipo di oggetto utilizzato nei videogiochi per attaccare nemici o difendersi. Può includere armi da mischia, da fuoco, magiche o futuristiche, a seconda del contesto di gioco."@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#DLC
+videogame:DLC rdf:type owl:Class ;
+              rdfs:subClassOf videogame:Elemento_di_Gioco ;
+              rdfs:comment "DLC (Downloadable Content) rappresenta un contenuto aggiuntivo scaricabile per un videogioco, che può includere nuove missioni, personaggi, oggetti o espansioni, estendendo l'esperienza di gioco."@it ;
+              rdfs:label "DLC"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Elemento_di_Gioco
+videogame:Elemento_di_Gioco rdf:type owl:Class ;
+                            rdfs:comment "Elemento di gioco rappresenta qualsiasi componente interno a un videogioco, inclusi eventi, oggetti, DLC, generi e aspetti della produzione. Serve a categorizzare elementi distintivi che caratterizzano l’esperienza di gioco."@it ;
+                            rdfs:label "Elemento di Gioco"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Evento_di_Gioco
+videogame:Evento_di_Gioco rdf:type owl:Class ;
+                          rdfs:subClassOf list:ListItem ;
+                          rdfs:comment "Evento di gioco rappresenta un'azione o situazione rilevante che si verifica durante il gameplay, come missioni, livelli, boss fight o eventi speciali, influenzando la progressione del videogioco."@it ;
+                          rdfs:label "Evento di Gioco"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Genere
+videogame:Genere rdf:type owl:Class ;
+                 owl:equivalentClass <http://xmlns.com/foaf/0.1/Genre> ;
+                 rdfs:subClassOf videogame:Elemento_di_Gioco ;
+                 rdfs:comment "Genere rappresenta la categoria di appartenenza di un videogioco in base alle sue meccaniche di gioco, narrativa e stile, come azione, RPG o strategia. Può avere sottogeneri per una classificazione più specifica."@it ;
+                 rdfs:label "Genere"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Nintendo
+videogame:Nintendo rdf:type owl:Class ;
+                   rdfs:subClassOf videogame:Piattaforma ;
+                   rdfs:comment "Azienda giapponese leader nell'industria dei videogiochi, conosciuta per le sue console come la Nintendo Switch, Nintendo 3DS e Wii."@it ;
+                   rdfs:label "Nintendo"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Oggetto
+videogame:Oggetto rdf:type owl:Class ;
+                  rdfs:subClassOf videogame:Elemento_di_Gioco ;
+                  rdfs:comment "Oggetto rappresenta qualsiasi elemento interattivo all'interno di un videogioco, come armi, equipaggiamenti o oggetti collezionabili, che possono influenzare il gameplay o l'esperienza del giocatore."@it ;
+                  rdfs:label "Genere"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PC
+videogame:PC rdf:type owl:Class ;
+             rdfs:subClassOf videogame:Piattaforma ;
+             rdfs:comment "PC rappresenta una piattaforma di gioco basata su personal computer, caratterizzata da hardware configurabile, compatibilità con periferiche diverse e distribuzione digitale dei videogiochi."@it ;
+             rdfs:label "PC"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PEGI
+videogame:PEGI rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:oneOf ( videogame:PEGI12
+                                                 videogame:PEGI16
+                                                 videogame:PEGI18
+                                                 videogame:PEGI3
+                                                 videogame:PEGI7
+                                               )
+                                   ] ;
+               rdfs:comment "PEGI rappresenta il sistema di classificazione per l’età consigliata di un videogioco, basato su contenuti come violenza, linguaggio e temi sensibili. È una classe enumerata con valori predefiniti (3, 7, 12, 16, 18)."@it ;
+               rdfs:label "PEGI"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PS
+videogame:PS rdf:type owl:Class ;
+             rdfs:subClassOf videogame:Piattaforma ;
+             rdfs:comment "PS (PlayStation) è una piattaforma di gioco sviluppata da Sony, composta da console dedicate, con un ampio catalogo di videogiochi, supporto per la realtà virtuale e funzionalità online."@it ;
+             rdfs:label "PS"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Personaggio
+videogame:Personaggio rdf:type owl:Class ;
+                      rdfs:comment "Personaggio rappresenta un'entità presente nel videogioco, controllabile o meno, che può svolgere ruoli chiave nella trama o nel gameplay, come protagonista o antagonista."@it ;
+                      rdfs:label "Personaggio"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Piattaforma
+videogame:Piattaforma rdf:type owl:Class ;
+                      rdfs:comment "Piattaforma rappresenta il sistema hardware o software su cui un videogioco può essere eseguito, includendo console, PC e dispositivi mobili."@it ;
+                      rdfs:label "Piattaforma"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Produzione
+videogame:Produzione rdf:type owl:Class ;
+                     rdfs:comment "Produzione rappresenta il processo di creazione e distribuzione di un videogioco, includendo attività come lo sviluppo, la progettazione, il marketing e la pubblicazione, con il coinvolgimento di vari attori, tra cui publisher e sviluppatori."@it ;
+                     rdfs:label "Produzione"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Protagonista
+videogame:Protagonista rdf:type owl:Class ;
+                       owl:equivalentClass videogame:vgo:Character ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty videogame:presenteIn ;
+                                             owl:someValuesFrom videogame:Videogioco
+                                           ] ;
+                       rdfs:subClassOf videogame:Personaggio ;
+                       rdfs:comment "Protagonista rappresenta il personaggio principale di un videogioco, spesso controllato dal giocatore, attorno al quale si sviluppa la trama e le principali dinamiche di gameplay."@it ;
+                       rdfs:label "Protagonista"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Publisher
+videogame:Publisher rdf:type owl:Class ;
+                    rdfs:subClassOf videogame:Produzione ;
+                    rdfs:comment "Publisher è l'entità responsabile della distribuzione e commercializzazione di un videogioco, gestendo aspetti come la promozione, la vendita e la pubblicazione sui vari mercati, spesso finanziando e supervisionando lo sviluppo del gioco."@it ;
+                    rdfs:label "Publisher"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Sviluppatore
+videogame:Sviluppatore rdf:type owl:Class ;
+                       rdfs:subClassOf videogame:Produzione ;
+                       rdfs:comment "Sviluppatore è l'entità o il team responsabile della creazione e dello sviluppo tecnico di un videogioco, occupandosi della progettazione, della programmazione, della grafica e della realizzazione di tutti gli aspetti interattivi del gioco."@it ;
+                       rdfs:label "Sviluppatore"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco
+videogame:Videogioco rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty videogame:disponibileSu ;
+                                           owl:someValuesFrom videogame:Piattaforma
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty videogame:haPublisher ;
+                                           owl:someValuesFrom videogame:Publisher
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty videogame:sviluppatoDa ;
+                                           owl:someValuesFrom videogame:Sviluppatore
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty videogame:haEvento ;
+                                           owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                           owl:onClass videogame:Evento_di_Gioco
+                                         ] ;
+                     rdfs:subClassOf list:List ;
+                     rdfs:comment "Videogioco rappresenta un prodotto software interattivo progettato per l’intrattenimento, giocabile su diverse piattaforme e caratterizzato da elementi come genere, modalità di gioco, storia e personaggi."@it ;
+                     rdfs:label "Videogioco"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#XBOX
+videogame:XBOX rdf:type owl:Class ;
+               rdfs:subClassOf videogame:Piattaforma ;
+               rdfs:comment "Xbox è una piattaforma di gioco sviluppata da Microsoft, composta da console dedicate con supporto per giochi ad alta definizione, giochi online tramite Xbox Live e servizi di abbonamento come Xbox Game Pass."@it ;
+               rdfs:label "XBOX"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#vgo:Character
+videogame:vgo:Character rdf:type owl:Class ;
+                        rdfs:subClassOf videogame:Personaggio .
+
+
+###  http://xmlns.com/foaf/0.1/Genre
+<http://xmlns.com/foaf/0.1/Genre> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Ascia_da_Guerra
+videogame:Ascia_da_Guerra rdf:type owl:NamedIndividual ;
+                          rdfs:comment "Ascia da guerra utilizzata come arma in combattimento."@it ;
+                          rdfs:label "AsciaDaGuerra"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Ash
+videogame:Ash rdf:type owl:NamedIndividual ;
+              videogame:usaArma videogame:Pokeball ;
+              rdfs:comment "Ash"@it ,
+                           "Protagonista della serie animata e dei videogiochi Pokémon, ispirato al personaggio Red dei videogiochi. È un Allenatore Pokémon determinato a diventare un Maestro Pokémon, accompagnato dal suo fedele Pikachu."@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Azione
+videogame:Azione rdf:type owl:NamedIndividual ;
+                 videogame:haSottogenere videogame:Gioco_di_Ruolo ;
+                 rdfs:comment "Azione è un tipo di videogioco in cui l'enfasi è posta su sfide fisiche, combattimenti e azioni rapide. I giochi di azione includono sequenze di gioco che richiedono riflessi rapidi, coordinazione e abilità nel superare ostacoli o nemici. Gli esempi classici sono i giochi di platform, sparatutto e giochi di combattimento."@it ;
+                 rdfs:label "Azione"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Baldur
+videogame:Baldur rdf:type owl:NamedIndividual ;
+                 rdfs:comment "Antagonista principale del videogioco God Of War"@it ;
+                 rdfs:label "Baldur"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Gioco_di_Ruolo
+videogame:Gioco_di_Ruolo rdf:type owl:NamedIndividual ;
+                         rdfs:comment "Genere di videogiochi in cui i giocatori controllano uno o più personaggi, sviluppandone abilità e statistiche attraverso missioni, combattimenti e interazioni con il mondo di gioco."@it ;
+                         rdfs:label "GiocoDiRuolo"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#God_Of_War_Ragnarok
+videogame:God_Of_War_Ragnarok rdf:type owl:NamedIndividual ;
+                              videogame:contienePersonaggio videogame:Kratos ;
+                              videogame:disponibileSu videogame:Intel_Core_i3-12100 ,
+                                                      videogame:PS4 ;
+                              videogame:haAntagonista videogame:Baldur ;
+                              videogame:haDLC videogame:Valhalla ;
+                              videogame:haGenere videogame:Azione ;
+                              videogame:haPEGI videogame:PEGI18 ;
+                              videogame:haPublisher videogame:Sony ;
+                              videogame:sviluppatoDa videogame:Santa_Monica_Studios ;
+                              videogame:haAnnoDiUscita 2019 ;
+                              videogame:numeroGiocatori 1 ;
+                              rdfs:comment "God of War è un videogioco di azione-avventura, noto per la sua narrativa coinvolgente e il combattimento dinamico. Il gioco segue le avventure di Kratos, un ex dio greco, e suo figlio Atreus, mentre affrontano sfide mitologiche in un mondo ispirato alla mitologia norrena. God Of War Ragnarok è l'ultimo capitolo della saga principale"@it ;
+                              rdfs:label "GodOfWarRagnarok"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Intel_Core_i3-12100
+videogame:Intel_Core_i3-12100 rdf:type owl:NamedIndividual ;
+                              videogame:versionePC "Intel Core i3-12100" ;
+                              rdfs:comment "Intel Core i3-12100: PC basato su processore Intel Core i3-12100, appartenente alla dodicesima generazione di CPU Intel. Ideale per gaming entry-level e attività generali, compatibile con sistemi Windows e Linux."@it ;
+                              rdfs:label "IntelCorei3-12100"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Kratos
+videogame:Kratos rdf:type owl:NamedIndividual ;
+                 videogame:usaArma videogame:Ascia_da_Guerra ;
+                 rdfs:comment "Kratos è il protagonista della serie di videogiochi *God of War*. Ex dio della guerra nella mitologia greca, è caratterizzato da un temperamento impulsivo e una forza straordinaria. Nel corso della serie, Kratos affronta numerosi nemici e divinità, lottando con il suo passato tormentato mentre cerca di proteggere suo figlio, Atreus, e affrontare nuove sfide mitologiche."@it ;
+                 rdfs:label "Kratos"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Midgard
+videogame:Midgard rdf:type owl:NamedIndividual ;
+                  list:firstItemOf videogame:God_Of_War_Ragnarok ;
+                  videogame:tipoEvento "Livello" ;
+                  rdfs:comment "Livello iniziale del videogioco God of War: Ragnarok"@it ;
+                  rdfs:label "Midgard"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Nintendo_Switch
+videogame:Nintendo_Switch rdf:type owl:NamedIndividual ;
+                          videogame:versioneNintendo "Switch" ;
+                          rdfs:comment "Console ibrida prodotta da Nintendo, che può essere utilizzata sia come una console da casa collegata a una TV, sia come una console portatile grazie al suo design modulare."@it ;
+                          rdfs:label "NintendoSwitch"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Odino
+videogame:Odino rdf:type owl:NamedIndividual ;
+                list:lastItemOf videogame:God_Of_War_Ragnarok ;
+                sequence:follows videogame:Midgard ;
+                videogame:tipoEvento "Boss" ;
+                rdfs:comment "Odino, padre degli dei norreni, è il boss finale con cui Kratos, protagonista del videogioco God of War: Ragnarok, si scontra."@it ;
+                rdfs:label "Odino"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PEGI12
+videogame:PEGI12 rdf:type owl:NamedIndividual ;
+                 rdfs:comment "PEGI 12 è una classificazione di età fornita dal sistema di classificazione dei videogiochi PEGI (Pan European Game Information). Indica che un videogioco è adatto per bambini di 12 anni o più, e che potrebbe contenere elementi come violenza moderata, linguaggio inappropriato o contenuti che non sono adatti ai più giovani, ma che sono considerati accettabili per un pubblico più maturo."@it ;
+                 rdfs:label "PEGI12"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PEGI16
+videogame:PEGI16 rdf:type owl:NamedIndividual ;
+                 rdfs:comment "PEGI 16 è una classificazione di età del sistema PEGI, che indica che un videogioco è adatto per giocatori di 16 anni o più. I giochi con questa classificazione possono contenere violenza più intensa, linguaggio forte, contenuti sessuali o riferimenti, e tematiche mature che potrebbero non essere adatti a un pubblico più giovane."@it ;
+                 rdfs:label "PEGI16"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PEGI18
+videogame:PEGI18 rdf:type owl:NamedIndividual ;
+                 rdfs:comment "PEGI 18 è la classificazione più alta nel sistema PEGI, destinata ai videogiochi che sono adatti solo a un pubblico adulto, ovvero 18 anni e oltre. I giochi con questa classificazione possono contenere contenuti estremi, come violenza grafica, linguaggio volgare, tematiche sessuali esplicite, droghe, e altre situazioni o comportamenti non adatti ai minori."@it ;
+                 rdfs:label "PEGI18"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PEGI3
+videogame:PEGI3 rdf:type owl:NamedIndividual ,
+                         videogame:PEGI ;
+                rdfs:comment "PEGI 3 è la classificazione più bassa nel sistema PEGI, indicata per videogiochi adatti a tutte le età, inclusi i bambini molto piccoli. I giochi con questa classificazione non contengono elementi di violenza, linguaggio inappropriato o altri contenuti che potrebbero essere dannosi per i più giovani. Di solito, questi giochi sono semplici, educativi o basati su elementi di gioco non violenti."@it ;
+                rdfs:label "PEGI3"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PEGI7
+videogame:PEGI7 rdf:type owl:NamedIndividual ;
+                rdfs:comment "PEGI 7 è una classificazione che indica che il videogioco è adatto per bambini a partire dai 7 anni. I giochi con questa classificazione possono contenere elementi di violenza molto leggera o situazioni spaventose, ma senza grafiche o contenuti eccessivamente realistici. In genere, i giochi PEGI 7 sono ancora adatti ai più giovani, con tematiche e contenuti che non superano il loro livello di comprensione o sensibilità."@it ;
+                rdfs:label "PEGI7"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#PS4
+videogame:PS4 rdf:type owl:NamedIndividual ;
+              videogame:versionePS 4 ;
+              rdfs:comment "PS4 (PlayStation 4) è una console di gioco sviluppata da Sony, lanciata nel 2013. Fa parte della quarta generazione di console PlayStation e offre una vasta gamma di giochi, supporto per grafica ad alta definizione, streaming multimediale, funzionalità online attraverso PlayStation Network e servizi come PlayStation Plus. La PS4 è conosciuta per la sua potenza hardware, il design compatto e l'ampia libreria di giochi."@it ;
+              rdfs:label "PS4"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Pokeball
+videogame:Pokeball rdf:type owl:NamedIndividual ;
+                   rdfs:comment "Oggetto iconico del franchise Pokémon utilizzato per catturare e immagazzinare Pokémon. Esistono diverse varianti con effetti specifici, influenzando la probabilità di cattura."@it ;
+                   rdfs:label "Pokeball"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Pokemon_Scarlatto
+videogame:Pokemon_Scarlatto rdf:type owl:NamedIndividual ;
+                            videogame:contienePersonaggio videogame:Ash ;
+                            videogame:disponibileSu videogame:Nintendo_Switch ;
+                            videogame:haDLC videogame:TesoroAreaZero ;
+                            videogame:haGenere videogame:Gioco_di_Ruolo ;
+                            videogame:haPEGI videogame:PEGI3 ;
+                            rdfs:comment "Videogioco di ruolo sviluppato da Game Freak e pubblicato da Nintendo e The Pokémon Company. Appartiene al franchise Pokémon ed è esclusivo per Nintendo Switch."@it ;
+                            rdfs:label "PokemonScarlatto"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Santa_Monica_Studios
+videogame:Santa_Monica_Studios rdf:type owl:NamedIndividual ;
+                               rdfs:comment "Sviluppatore di videogiochi statunitense, parte dei PlayStation Studios di Sony. È noto principalmente per la serie God of War, caratterizzata da una forte componente narrativa e un gameplay d'azione."@it ;
+                               rdfs:label "SantaMonicaStudio"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Sony
+videogame:Sony rdf:type owl:NamedIndividual ;
+               rdfs:comment "Azienda giapponese specializzata in elettronica di consumo, gaming e intrattenimento. Publisher e produttore della console PlayStation, nonché sviluppatore di videogiochi tramite i suoi studi first-party."@it ;
+               rdfs:label "Sony"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#TesoroAreaZero
+videogame:TesoroAreaZero rdf:type owl:NamedIndividual ;
+                         rdfs:comment "Contenuto aggiuntivo (DLC) per *Pokémon Scarlatto* e *Pokémon Violetto*, sviluppato da Game Freak e pubblicato da Nintendo e The Pokémon Company. Espande la storia e introduce nuove aree, Pokémon e missioni."@it ;
+                         rdfs:label "TesoroAreaZero"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Valhalla
+videogame:Valhalla rdf:type owl:NamedIndividual ;
+                   rdfs:isDefinedBy "Contenuto aggiuntivo per God of War (2018), che espande la trama principale e introduce nuove ambientazioni, missioni e nemici, ispirati alla mitologia norrena. Il DLC esplora aspetti legati alla mitologia di Valhalla, arricchendo l'esperienza di gioco."@it ;
+                   rdfs:label "Valhalla"@it .
+
+
+###  http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#XBOX_ONE
+videogame:XBOX_ONE rdf:type owl:NamedIndividual ;
+                   videogame:versioneXBOX "ONE" ;
+                   rdfs:comment "Console prodotta da Microsoft, appartenente all’ottava generazione di console. Supporta giochi in formato digitale e fisico ed è parte dell’ecosistema Xbox."@it ;
+                   rdfs:label "XBOXONE"@it .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
