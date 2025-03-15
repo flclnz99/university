@@ -84,6 +84,42 @@
     
 
 
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf">
+        <rdfs:comment xml:lang="en">First item of a list</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf">
+        <rdfs:comment xml:lang="en">Last item of a list</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#armaUsataDa -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#armaUsataDa">
+        <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#usaArma"/>
+        <rdfs:comment xml:lang="it">Ogni arma è usata da un personaggio (protagonista o antagonista)</rdfs:comment>
+        <rdfs:label xml:lang="it">armaUsataDa</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#classifica -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#classifica">
+        <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haPEGI"/>
+        <rdfs:comment xml:lang="it">Ogni categoria di PEGI classifica uno o più videogiochi</rdfs:comment>
+        <rdfs:seeAlso xml:lang="it">classifica</rdfs:seeAlso>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#contienePersonaggio -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#contienePersonaggio">
@@ -99,6 +135,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#disponibileSu -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#disponibileSu">
+        <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#ospita"/>
         <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Piattaforma"/>
         <rdfs:comment xml:lang="it">Il videogioco è disponibile su una piattaforma</rdfs:comment>
@@ -110,6 +147,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haAntagonista -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haAntagonista">
+        <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èAntagonistaIn"/>
         <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Antagonista"/>
         <rdfs:comment xml:lang="it">Riferimento alla relazione in cui un videogioco presenta uno o più antagonisti, ovvero i personaggi o forze che si oppongono al protagonista del gioco. L&apos;antagonista è spesso la figura centrale con cui il giocatore deve confrontarsi nel corso della trama, creando conflitto e motivazione per l&apos;avanzamento del gioco.</rdfs:comment>
@@ -121,6 +159,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haDLC -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haDLC">
+        <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èDlcDi"/>
         <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#DLC"/>
         <rdfs:comment>Un videogioco può avere un DLC, ovvero una parte aggiuntiva, rilasciata in seguito all&apos;uscita del gioco stesso.</rdfs:comment>
@@ -132,6 +171,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haEvento -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haEvento">
+        <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èEventoDi"/>
         <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Evento_di_Gioco"/>
         <rdfs:comment xml:lang="it">Ogni videogioco ha almeno un&apos;evento di gioco</rdfs:comment>
@@ -143,6 +183,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haGenere -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haGenere">
+        <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èGenereDi"/>
         <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Genere"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -169,6 +210,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haPublisher -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haPublisher">
+        <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èPublisherDi"/>
         <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Publisher"/>
         <rdfs:comment xml:lang="it">Un videogioco è associato ad un publisher</rdfs:comment>
@@ -180,6 +222,7 @@
     <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haSottogenere -->
 
     <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#haSottogenere">
+        <owl:inverseOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èSottogenereDi"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Genere"/>
         <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Genere"/>
@@ -197,6 +240,15 @@
         <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
         <rdfs:comment xml:lang="it">Uno sviluppatore sviluppa un videogioco</rdfs:comment>
         <rdfs:label xml:lang="it">haSviluppato</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#ospita -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#ospita">
+        <rdfs:comment xml:lang="it">Ogni piattaforma ospita uno o più videogiochi</rdfs:comment>
+        <rdfs:label xml:lang="it">ospita</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -230,6 +282,57 @@
         <rdfs:range rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Arma"/>
         <rdfs:comment xml:lang="it">Un personaggio usa un&apos;arma</rdfs:comment>
         <rdfs:label xml:lang="it">usaArma</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èAntagonistaIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èAntagonistaIn">
+        <rdfs:comment xml:lang="it">In un gioco esistono 0 o più antagonisti</rdfs:comment>
+        <rdfs:label xml:lang="it">èAntagonistaIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èDlcDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èDlcDi">
+        <rdfs:comment xml:lang="it">Ogni DLC appartiene ad un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">èDlcDi</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èEventoDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èEventoDi"/>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èGenereDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èGenereDi">
+        <rdfs:comment xml:lang="it">Ogni genere caratterizza uno o più giochi</rdfs:comment>
+        <rdfs:label xml:lang="it">èGenereDi</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èPublisherDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èPublisherDi">
+        <rdfs:comment xml:lang="it">Un publisher pubblica uno o più videogiochi</rdfs:comment>
+        <rdfs:label xml:lang="it">èPublisherDi</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èSottogenereDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#èSottogenereDi">
+        <rdfs:comment xml:lang="it">Un genere può essere un sottogenere di un altro</rdfs:comment>
+        <rdfs:label xml:lang="it">èSottogenereDi</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -284,6 +387,8 @@
     <owl:DatatypeProperty rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#versioneNintendo">
         <rdfs:domain rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Nintendo"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">Tipologia di console specifica sviluppata dalla casa di produzione Nintendo</rdfs:comment>
+        <rdfs:label xml:lang="it">versioneNintendo</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -336,6 +441,8 @@
 
     <owl:Class rdf:about="http://purl.org/net/VideoGameOntology#vgo:Game">
         <owl:equivalentClass rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Videogioco"/>
+        <rdfs:comment xml:lang="it">vgo:Game rappresenta un videogioco nell&apos;ontologia VGO (Video Game Ontology).</rdfs:comment>
+        <rdfs:label xml:lang="it">vgo:Game</rdfs:label>
     </owl:Class>
     
 
@@ -369,6 +476,7 @@
     <owl:Class rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Arma">
         <rdfs:subClassOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Oggetto"/>
         <rdfs:comment xml:lang="it">Arma rappresenta un tipo di oggetto utilizzato nei videogiochi per attaccare nemici o difendersi. Può includere armi da mischia, da fuoco, magiche o futuristiche, a seconda del contesto di gioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Arma</rdfs:label>
     </owl:Class>
     
 
@@ -428,7 +536,7 @@
     <owl:Class rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Oggetto">
         <rdfs:subClassOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Elemento_di_Gioco"/>
         <rdfs:comment xml:lang="it">Oggetto rappresenta qualsiasi elemento interattivo all&apos;interno di un videogioco, come armi, equipaggiamenti o oggetti collezionabili, che possono influenzare il gameplay o l&apos;esperienza del giocatore.</rdfs:comment>
-        <rdfs:label xml:lang="it">Genere</rdfs:label>
+        <rdfs:label xml:lang="it">Oggetto</rdfs:label>
     </owl:Class>
     
 
@@ -586,13 +694,18 @@
 
     <owl:Class rdf:about="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#vgo:Character">
         <rdfs:subClassOf rdf:resource="http://www.videogame.org/lorenzo/ontologies/2024/1/videogame#Personaggio"/>
+        <rdfs:label xml:lang="it">vgo:Character</rdfs:label>
+        <rdfs:label xml:lang="it">vgo:Character rappresenta un personaggio all&apos;interno dell&apos;ontologia VGO (Video Game Ontology).</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/Genre -->
 
-    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Genre"/>
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Genre">
+        <rdfs:comment xml:lang="it">Rappresenta un genere associato a un&apos;entità, spesso utilizzato per categorizzare opere creative come film, libri o videogiochi.</rdfs:comment>
+        <rdfs:label xml:lang="it">foaf:Genre</rdfs:label>
+    </owl:Class>
     
 
 
@@ -849,6 +962,20 @@
         <rdfs:comment xml:lang="it">Console prodotta da Microsoft, appartenente all’ottava generazione di console. Supporta giochi in formato digitale e fisico ed è parte dell’ecosistema Xbox.</rdfs:comment>
         <rdfs:label xml:lang="it">XBOXONE</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf">
+        <rdfs:comment xml:lang="en">Single member of a list</rdfs:comment>
+    </rdf:Description>
 </rdf:RDF>
 
 
